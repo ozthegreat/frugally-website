@@ -1,15 +1,5 @@
-resource "aws_s3_bucket" "codepipeline_bucket" {
-  bucket = "${data.aws_caller_identity.current.account_id}-${local.resource_name}"
-  acl    = "private"
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm     = "AES256"
-      }
-    }
-  }
-  tags = local.tags
-}
+# http://rayterrill.com/2019/01/18/AWS-CodePipeline-Deploy-to-S3-with-Terraform.html
+
 
 resource "aws_iam_role" "codepipeline_role" {
   name = "${local.resource_name}-codepipline-role"
@@ -47,8 +37,8 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
         "s3:PutObject"
       ],
       "Resource": [
-        "${aws_s3_bucket.codepipeline_bucket.arn}",
-        "${aws_s3_bucket.codepipeline_bucket.arn}/*"
+        "${aws_s3_bucket.website.arn}",
+        "${aws_s3_bucket.website.arn}/*"
       ]
     },
     {
@@ -71,7 +61,7 @@ resource "aws_codepipeline" "codepipeline" {
   role_arn = aws_iam_role.codepipeline_role.arn
 
   artifact_store {
-    location = aws_s3_bucket.codepipeline_bucket.bucket
+    location = aws_s3_bucket.website.bucket
     type     = "S3"
 
     # encryption_key {
@@ -100,42 +90,22 @@ resource "aws_codepipeline" "codepipeline" {
   }
 
   stage {
-    name = "Build"
+    name = "Deploy"
 
     action {
-      name             = "Build"
-      category         = "Build"
-      owner            = "AWS"
-      provider         = "CodeBuild"
-      input_artifacts  = ["source_output"]
-      output_artifacts = ["build_output"]
-      version          = "1"
+      name            = "Deploy"
+      category        = "Deploy"
+      owner           = "AWS"
+      provider        = "S3"
+      input_artifacts = ["source_output"]
+      version         = "1"
 
       configuration = {
-        ProjectName = "test"
+        BucketName = aws_s3_bucket.website.bucket
+        Extract = "true"
       }
+
     }
   }
-
-  # stage {
-  #   name = "Deploy"
-
-  #   action {
-  #     name            = "Deploy"
-  #     category        = "Deploy"
-  #     owner           = "AWS"
-  #     provider        = "CloudFormation"
-  #     input_artifacts = ["build_output"]
-  #     version         = "1"
-
-  #     configuration = {
-  #       ActionMode     = "REPLACE_ON_FAILURE"
-  #       Capabilities   = "CAPABILITY_AUTO_EXPAND,CAPABILITY_IAM"
-  #       OutputFileName = "CreateStackOutput.json"
-  #       StackName      = "MyStack"
-  #       TemplatePath   = "build_output::sam-templated.yaml"
-  #     }
-  #   }
-  # }
 
 }
