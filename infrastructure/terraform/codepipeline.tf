@@ -54,8 +54,6 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
 EOF
 }
 
-
-
 resource "aws_codepipeline" "codepipeline" {
   name     = local.resource_name
   role_arn = aws_iam_role.codepipeline_role.arn
@@ -90,6 +88,24 @@ resource "aws_codepipeline" "codepipeline" {
   }
 
   stage {
+    name = "Build"
+
+    action {
+      name             = "Build"
+      category         = "Build"
+      owner            = "AWS"
+      provider         = "CodeBuild"
+      version          = "1"
+      input_artifacts = ["source_output"]
+      output_artifacts = ["build_output"]
+      configuration = {
+        ProjectName = "${local.resource_name}-build"
+      }
+
+    }
+  }
+
+  stage {
     name = "Deploy"
 
     action {
@@ -97,7 +113,7 @@ resource "aws_codepipeline" "codepipeline" {
       category        = "Deploy"
       owner           = "AWS"
       provider        = "S3"
-      input_artifacts = ["source_output"]
+      input_artifacts = ["build_output"]
       version         = "1"
 
       configuration = {
