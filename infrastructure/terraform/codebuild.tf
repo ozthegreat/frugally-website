@@ -50,8 +50,8 @@ resource "aws_iam_role_policy" "build" {
         "s3:PutObject"
       ],
       "Resource": [
-        "${aws_s3_bucket.codepipline.arn}",
-        "${aws_s3_bucket.codepipline.arn}/*"
+        "${aws_s3_bucket.artifacts.arn}",
+        "${aws_s3_bucket.artifacts.arn}/*"
       ]
     }
   ]

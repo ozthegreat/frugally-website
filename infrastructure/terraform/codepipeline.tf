@@ -1,10 +1,8 @@
 # http://rayterrill.com/2019/01/18/AWS-CodePipeline-Deploy-to-S3-with-Terraform.html
-# S3 bucket access & expiry
 # deploy notifications
 # output articfact
 
-
-resource "aws_s3_bucket" "codepipline" {
+resource "aws_s3_bucket" "artifacts" {
   bucket = "${data.aws_caller_identity.current.account_id}-${local.resource_name}-artifacts"
   acl    = "private"
 
@@ -31,6 +29,15 @@ resource "aws_s3_bucket" "codepipline" {
   }
 
   tags = local.tags
+}
+
+resource "aws_s3_bucket_public_access_block" "artifacts" {
+  bucket = aws_s3_bucket.artifacts.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 resource "aws_iam_role" "codepipeline_role" {
@@ -69,8 +76,8 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
         "s3:PutObject"
       ],
       "Resource": [
-        "${aws_s3_bucket.codepipline.arn}",
-        "${aws_s3_bucket.codepipline.arn}/*",
+        "${aws_s3_bucket.artifacts.arn}",
+        "${aws_s3_bucket.artifacts.arn}/*",
         "${aws_s3_bucket.website.arn}",
         "${aws_s3_bucket.website.arn}/*"
       ]
@@ -93,7 +100,7 @@ resource "aws_codepipeline" "codepipeline" {
   role_arn = aws_iam_role.codepipeline_role.arn
 
   artifact_store {
-    location = aws_s3_bucket.codepipline.bucket
+    location = aws_s3_bucket.artifacts.bucket
     type     = "S3"
 
     # encryption_key {

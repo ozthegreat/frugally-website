@@ -20,4 +20,4 @@ version: 0.2
 artifacts:
   files:
     - src/**/*
-#   name: website-$(date +%Y-%m-%d)
+  name: cloudsiren-website-${ENVIRONMENT}-$(date +%Y-%m-%d)-${CODEBUILD_SOURCE_VERSION}
