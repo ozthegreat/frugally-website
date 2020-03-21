@@ -91,11 +91,11 @@ resource "aws_codebuild_project" "build" {
 #       status   = "ENABLED"
 #       location = "${aws_s3_bucket.example.id}/build-log"
 #     }
-#   }
-
-  source {
-    type            = "CODEPIPELINE"
   }
 
-  source_version = "master"
+  source {
+    type      = "CODEPIPELINE"
+    buildspec = "buildspec_build.yml"
+  }
+
 }

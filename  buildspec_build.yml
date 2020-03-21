@@ -1,0 +1,25 @@
+version: 0.2
+   
+# phases:
+#   build:
+#     run-as: Linux-user-name
+#     commands:
+#       - command
+#       - command
+#     finally:
+#       - command
+#       - command
+#   post_build:
+#     run-as: Linux-user-name
+#     commands:
+#       - command
+#       - command
+#     finally:
+#       - command
+#       - command
+artifacts:
+  files:
+    - src/**/*
+#   name: website-$(date +%Y-%m-%d) 
+  discard-paths: yes
+  base-directory: location
