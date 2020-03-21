@@ -2,5 +2,6 @@ version: 0.2
 
 artifacts:
   files:
-    - src/**/*
+    - '**/*'
+  base-directory: 'src'
   name: cloudsiren-website-${ENVIRONMENT}-$(date +%Y-%m-%d)-${CODEBUILD_SOURCE_VERSION}
