@@ -35,6 +35,8 @@ locals {
   provisioner    = var.provisioner
   endpoint       = var.endpoint[local.environment]
   domain         = var.endpoint[local.environment]
+  codebuild_build_name = "${local.resource_name}-build"
+  codebuild_invalidate_cache_name = "${local.resource_name}-invalidate-cache"
 
   tags = {
     Name         = local.resource_name

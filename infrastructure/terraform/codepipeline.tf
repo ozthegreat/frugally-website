@@ -1,5 +1,5 @@
 # http://rayterrill.com/2019/01/18/AWS-CodePipeline-Deploy-to-S3-with-Terraform.html
-# deploy notifications
+# deploy notifications https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html
 # output articfact
 
 resource "aws_s3_bucket" "artifacts" {
@@ -140,7 +140,7 @@ resource "aws_codepipeline" "codepipeline" {
       input_artifacts = ["source_output"]
       output_artifacts = ["build_output"]
       configuration = {
-        ProjectName = "${local.resource_name}-build"
+        ProjectName = local.codebuild_build_name
       }
 
     }
@@ -162,6 +162,23 @@ resource "aws_codepipeline" "codepipeline" {
         Extract = "true"
       }
 
+    }
+  }
+
+  stage {
+    name = "PostDeploy"
+
+    action {
+      name            = "PostDeploy"
+      category        = "Build"
+      owner           = "AWS"
+      provider        = "CodeBuild"
+      input_artifacts = ["build_output"]
+      version         = "1"
+
+      configuration = {
+        ProjectName = local.codebuild_invalidate_cache_name
+      }
     }
   }
 

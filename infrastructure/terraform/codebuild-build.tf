@@ -1,8 +1,3 @@
-# Stops a cyclic dependency between codebuild and cloudwatch.
-locals {
-  codebuild_build_name = "${local.resource_name}-build"
-}
-
 resource "aws_iam_role" "build" {
   name = "${local.resource_name}-codebuild-role-build"
   tags = local.tags
@@ -67,7 +62,7 @@ resource "aws_cloudwatch_log_group" "build" {
 
 resource "aws_codebuild_project" "build" {
   name          = local.codebuild_build_name
-  description   = "Builds ${local.resource_name}"
+  description   = "Builds the assets for ${local.resource_name}"
   build_timeout = "5"
   service_role  = aws_iam_role.build.arn
   tags          = local.tags
@@ -87,7 +82,7 @@ resource "aws_codebuild_project" "build" {
 
   environment {
     compute_type  = "BUILD_GENERAL1_SMALL"
-    image         = "aws/codebuild/standard:2.0"
+    image         = "aws/codebuild/amazonlinux2-x86_64-standard:3.0"
     type          = "LINUX_CONTAINER"
 
     environment_variable {
