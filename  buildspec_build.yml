@@ -20,6 +20,4 @@ version: 0.2
 artifacts:
   files:
     - src/**/*
-#   name: website-$(date +%Y-%m-%d) 
-  discard-paths: yes
-  base-directory: location
+#   name: website-$(date +%Y-%m-%d)

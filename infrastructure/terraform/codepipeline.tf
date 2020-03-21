@@ -1,5 +1,37 @@
 # http://rayterrill.com/2019/01/18/AWS-CodePipeline-Deploy-to-S3-with-Terraform.html
+# S3 bucket access & expiry
+# deploy notifications
+# output articfact
 
+
+resource "aws_s3_bucket" "codepipline" {
+  bucket = "${data.aws_caller_identity.current.account_id}-${local.resource_name}-artifacts"
+  acl    = "private"
+
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm     = "AES256"
+      }
+    }
+  }
+
+  lifecycle_rule {
+    id      = "expire"
+    enabled = true
+
+    transition {
+      days          = 30
+      storage_class = "ONEZONE_IA"
+    }
+
+    expiration {
+      days = 90
+    }
+  }
+
+  tags = local.tags
+}
 
 resource "aws_iam_role" "codepipeline_role" {
   name = "${local.resource_name}-codepipline-role"
@@ -37,6 +69,8 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
         "s3:PutObject"
       ],
       "Resource": [
+        "${aws_s3_bucket.codepipline.arn}",
+        "${aws_s3_bucket.codepipline.arn}/*",
         "${aws_s3_bucket.website.arn}",
         "${aws_s3_bucket.website.arn}/*"
       ]
@@ -47,7 +81,7 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
         "codebuild:BatchGetBuilds",
         "codebuild:StartBuild"
       ],
-      "Resource": "*"
+      "Resource": "${aws_codebuild_project.build.arn}"
     }
   ]
 }
@@ -59,7 +93,7 @@ resource "aws_codepipeline" "codepipeline" {
   role_arn = aws_iam_role.codepipeline_role.arn
 
   artifact_store {
-    location = aws_s3_bucket.website.bucket
+    location = aws_s3_bucket.codepipline.bucket
     type     = "S3"
 
     # encryption_key {
