@@ -33,7 +33,7 @@ resource "aws_iam_role_policy" "invalidate_cache" {
         "logs:PutLogEvents"
       ],
       "Resource": [
-        "${aws_cloudwatch_log_group.build.arn}*"
+        "${aws_cloudwatch_log_group.invalidate_cache.arn}*"
       ]
     },
     {
