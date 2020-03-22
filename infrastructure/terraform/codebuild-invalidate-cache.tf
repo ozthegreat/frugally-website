@@ -19,7 +19,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "invalidate_cache" {
-  role = aws_iam_role.build.name
+  role = aws_iam_role.invalidate_cache.name
 
   policy = <<POLICY
 {
