@@ -37,6 +37,19 @@ resource "aws_iam_role_policy" "invalidate_cache" {
       ]
     },
     {
+      "Effect":"Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:GetBucketVersioning",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "${aws_s3_bucket.artifacts.arn}",
+        "${aws_s3_bucket.artifacts.arn}/*"
+      ]
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "cloudfront:CreateInvalidation"
