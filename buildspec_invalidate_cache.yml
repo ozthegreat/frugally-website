@@ -3,4 +3,4 @@ version: 0.2
 phases:
   build:
     commands:
-      - ls -la
+      - aws cloudfront create-invalidation --distribution-id EDFDVBD6EXAMPLE --paths "/*"

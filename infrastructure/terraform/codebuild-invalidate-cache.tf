@@ -35,6 +35,15 @@ resource "aws_iam_role_policy" "invalidate_cache" {
       "Resource": [
         "${aws_cloudwatch_log_group.build.arn}*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:CreateInvalidation"
+      ],
+      "Resource": [
+        "${aws_cloudfront_distribution.website.arn}*"
+      ]
     }
   ]
 }
@@ -72,6 +81,11 @@ resource "aws_codebuild_project" "invalidate_cache" {
     environment_variable {
       name  = "ENVIRONMENT"
       value = local.environment
+    }
+
+    environment_variable {
+      name  = "CLOUDFRONT_DISTRIBUTION_ID"
+      value = aws_cloudfront_distribution.website.id
     }
   }
 

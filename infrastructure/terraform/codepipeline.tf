@@ -1,5 +1,4 @@
 # http://rayterrill.com/2019/01/18/AWS-CodePipeline-Deploy-to-S3-with-Terraform.html
-# deploy notifications https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html
 # output articfact
 
 resource "aws_s3_bucket" "artifacts" {
@@ -96,6 +95,23 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
   ]
 }
 EOF
+}
+
+resource "aws_codestarnotifications_notification_rule" "codepipeline" {
+  name        = local.resource_name
+  resource    = aws_codepipeline.codepipeline.arn
+  detail_type = "BASIC"
+  tags        = local.tags
+  event_type_ids = [
+    "codepipeline-pipeline-pipeline-execution-started",
+    "codepipeline-pipeline-pipeline-execution-failed",
+    "codepipeline-pipeline-pipeline-execution-canceled",
+    "codepipeline-pipeline-pipeline-execution-succeeded"
+  ]
+
+  target {
+    address = data.aws_sns_topic.alerts.arn
+  }
 }
 
 resource "aws_codepipeline" "codepipeline" {
