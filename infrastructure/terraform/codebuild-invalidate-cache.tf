@@ -91,7 +91,7 @@ resource "aws_codebuild_project" "invalidate_cache" {
 
   logs_config {
     cloudwatch_logs {
-      group_name  = aws_cloudwatch_log_group.build.name
+      group_name  = aws_cloudwatch_log_group.invalidate_cache.name
       status      = "ENABLED"
     }
   }
