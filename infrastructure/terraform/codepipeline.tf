@@ -98,6 +98,7 @@ EOF
 resource "aws_codepipeline" "codepipeline" {
   name     = local.resource_name
   role_arn = aws_iam_role.codepipeline_role.arn
+  tags = local.tags
 
   artifact_store {
     location = aws_s3_bucket.artifacts.bucket
