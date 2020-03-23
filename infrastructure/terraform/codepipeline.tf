@@ -158,7 +158,7 @@ resource "aws_codepipeline" "codepipeline" {
       provider         = "CodeBuild"
       version          = "1"
       input_artifacts = ["source_output"]
-      output_artifacts = ["build_output", "buildspec_output"]
+      output_artifacts = ["artifact1", "artifact2"]
       configuration = {
         ProjectName = local.codebuild_build_name
       }
@@ -174,7 +174,7 @@ resource "aws_codepipeline" "codepipeline" {
       category        = "Deploy"
       owner           = "AWS"
       provider        = "S3"
-      input_artifacts = ["build_output"]
+      input_artifacts = ["artifact1"]
       version         = "1"
 
       configuration = {
@@ -193,7 +193,7 @@ resource "aws_codepipeline" "codepipeline" {
       category        = "Build"
       owner           = "AWS"
       provider        = "CodeBuild"
-      input_artifacts = ["buildspec_output"]
+      input_artifacts = ["artifact2"]
       version         = "1"
 
       configuration = {

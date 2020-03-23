@@ -6,12 +6,13 @@ version: 0.2
 #       - echo 'Release: ' $(date '+%Y-%m-%d %T') >> src/version.txt
 
 artifacts:
-  files:
-    - '**/*'
-  base-directory: 'src'
-  name: cloudsiren-website-${ENVIRONMENT}-$(date +%Y-%m-%d)-${CODEBUILD_SOURCE_VERSION}
   secondary-artifacts:
-    buildFiles:
+    artifact1:
+      files:
+        - '**/*'
+      base-directory: 'src'
+      name: cloudsiren-website-${ENVIRONMENT}-$(date +%Y-%m-%d)-${CODEBUILD_SOURCE_VERSION}
+    artifact2:
       files:
         - buildspec*
       name: cloudsiren-website-buildspecs
