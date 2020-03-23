@@ -1,9 +1,9 @@
 version: 0.2
 
-phases:
-  build:
-    commands:
-      - echo 'Release: ' $(date '+%Y-%m-%d %T') >> src/version.txt
+# phases:
+#   build:
+#     commands:
+#       - echo 'Release: ' $(date '+%Y-%m-%d %T') >> src/version.txt
 
 artifacts:
   files:
