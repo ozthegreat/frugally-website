@@ -78,6 +78,7 @@ resource "aws_codebuild_project" "build" {
   # Output
   artifacts {
     type = "CODEPIPELINE"
+    override_artifact_name = "true"
   }
 
   environment {

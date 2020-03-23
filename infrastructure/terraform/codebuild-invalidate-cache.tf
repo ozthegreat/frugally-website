@@ -84,6 +84,7 @@ resource "aws_codebuild_project" "invalidate_cache" {
 
   artifacts {
     type = "CODEPIPELINE"
+    override_artifact_name = "true"
   }
 
   environment {
