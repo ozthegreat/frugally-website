@@ -1,6 +1,7 @@
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
+# This is provisioned manually as there's no terraform support for it yet.
 data "aws_sns_topic" "alerts" {
   name = "alerts-${local.environment}"
 }

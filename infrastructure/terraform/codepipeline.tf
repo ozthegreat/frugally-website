@@ -1,5 +1,4 @@
 # http://rayterrill.com/2019/01/18/AWS-CodePipeline-Deploy-to-S3-with-Terraform.html
-# output articfact
 
 resource "aws_s3_bucket" "artifacts" {
   bucket = "${data.aws_caller_identity.current.account_id}-${local.resource_name}-artifacts"
@@ -117,7 +116,7 @@ resource "aws_codestarnotifications_notification_rule" "codepipeline" {
 resource "aws_codepipeline" "codepipeline" {
   name     = local.resource_name
   role_arn = aws_iam_role.codepipeline_role.arn
-  tags = local.tags
+  tags     = local.tags
 
   artifact_store {
     location = aws_s3_bucket.artifacts.bucket

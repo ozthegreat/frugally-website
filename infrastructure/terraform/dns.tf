@@ -1,3 +1,4 @@
+# We really don't need request logging for a static website.
 resource "aws_route53_record" "webapp" {
   provider = aws.dns
   zone_id  = data.aws_route53_zone.webapp.zone_id

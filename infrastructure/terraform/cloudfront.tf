@@ -1,4 +1,4 @@
-
+# We really don't need request logging for a static website.
 resource "aws_cloudfront_distribution" "website" {
   # web_acl_id      = var.aws_waf_web_acl[local.environment]
   # TEMP. Terraform doesn't support WAFv2 yet.
@@ -60,7 +60,7 @@ resource "aws_cloudfront_distribution" "website" {
     compress               = true
   }
 
-  # CloudFron caches for ~15min by default. Let's reduce this.
+  # CloudFront caches for ~15min by default. Let's reduce this.
   custom_error_response {
     error_code            = 404
     error_caching_min_ttl = 15
