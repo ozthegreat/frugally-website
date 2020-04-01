@@ -40,3 +40,11 @@ provider "aws" {
     session_name = "Terraform"
   }
 }
+
+# Configure the GitHub Provider.
+# token from GITHUB_TOKEN env var (required by codepipline)
+provider "github" {
+  version    = "2.4.0"
+  individual = false
+  organization = split("/", var.project)[0]
+}

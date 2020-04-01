@@ -113,6 +113,41 @@ resource "aws_codestarnotifications_notification_rule" "codepipeline" {
   }
 }
 
+resource "random_password" "webhook_secret" {
+  length = 32
+  special = false
+}
+
+resource "aws_codepipeline_webhook" "webhook" {
+  name            = "${local.resource_name}_webhook."
+  authentication  = "GITHUB_HMAC"
+  target_action   = "Source"
+  target_pipeline = aws_codepipeline.codepipeline.name
+
+  authentication_configuration {
+    secret_token = random_password.webhook_secret.result
+  }
+
+  filter {
+    json_path    = "$.ref"
+    match_equals = "refs/heads/{Branch}"
+  }
+}
+
+resource "github_repository_webhook" "webhook" {
+  repository = split("/", var.project)[1]
+  active = true
+
+  configuration {
+    url          = aws_codepipeline_webhook.webhook.url
+    content_type = "json"
+    insecure_ssl = false
+    secret       = random_password.webhook_secret.result
+  }
+
+  events = ["push", "pull_request"]
+}
+
 resource "aws_codepipeline" "codepipeline" {
   name     = local.resource_name
   role_arn = aws_iam_role.codepipeline_role.arn
@@ -140,9 +175,10 @@ resource "aws_codepipeline" "codepipeline" {
       output_artifacts = ["source_output"]
 
       configuration = {
-        Owner  = "ozthegreat"
-        Repo   = "cloudsiren-website"
+        Owner  = split("/", var.project)[0]
+        Repo   = split("/", var.project)[1]
         Branch = local.environment
+        PollForSourceChanges = "false"
       }
     }
   }
