@@ -27,6 +27,13 @@ variable "endpoint" {
   }
 }
 
+variable "branch" {
+  default = {
+    production = "master"
+    develop = "devlop"
+  }
+}
+
 locals {
   aws_account_id = var.aws_account_id[terraform.workspace]
   environment    = terraform.workspace
