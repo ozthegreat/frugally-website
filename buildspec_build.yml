@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - "echo 'Release Date: '$(date '+%Y-%m-%d %T')'\nEnvironment: '${ENVIRONMENT}'\nGit Hash: '${CODEBUILD_RESOLVED_SOURCE_VERSION} >> src/version.txt"
+
+artifacts:
+  secondary-artifacts:
+    artifact1:
+      files:
+        - '**/*'
+      base-directory: 'src'
+    # Need the buildspec files for the PostDeploy stage.
+    artifact2:
+      files:
+        - buildspec*

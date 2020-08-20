@@ -1,4 +1,4 @@
-
+# We really don't need request logging for a static website.
 resource "aws_cloudfront_distribution" "website" {
   # web_acl_id      = var.aws_waf_web_acl[local.environment]
   # TEMP. Terraform doesn't support WAFv2 yet.
@@ -8,10 +8,11 @@ resource "aws_cloudfront_distribution" "website" {
     ]
   }
 
-#   aliases         = [local.endpoint]
-  enabled         = true
-  is_ipv6_enabled = true
-  tags            = local.tags
+  aliases             = [local.endpoint]
+  enabled             = true
+  is_ipv6_enabled     = true
+  tags                = local.tags
+  default_root_object = "index.html"
 
   origin {
     domain_name = aws_s3_bucket.website.website_endpoint
@@ -20,9 +21,8 @@ resource "aws_cloudfront_distribution" "website" {
     custom_origin_config {
       http_port              = 80
       https_port             = 443
-      origin_protocol_policy = "https-only"
+      origin_protocol_policy = "http-only"
       origin_ssl_protocols   = ["TLSv1.2"]
-      # CloudFront defaults to 5s. We don't cache much so maintain conections.
       origin_keepalive_timeout = 5
       origin_read_timeout      = 30
     }
@@ -35,17 +35,14 @@ resource "aws_cloudfront_distribution" "website" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn      = data.aws_acm_certificate.main.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2018"
   }
-#   viewer_certificate {
-#     acm_certificate_arn      = data.aws_acm_certificate.main.arn
-#     ssl_support_method       = "sni-only"
-#     minimum_protocol_version = "TLSv1.2_2018"
-#   }
 
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
-    cached_methods   = ["GET", "HEAD", "OPTIONS"]
+    allowed_methods  = ["GET", "HEAD"]
+    cached_methods   = ["GET", "HEAD"]
     target_origin_id = aws_s3_bucket.website.id
 
     forwarded_values {
@@ -63,7 +60,7 @@ resource "aws_cloudfront_distribution" "website" {
     compress               = true
   }
 
-  # CloudFron caches for ~15min by default. Let's reduce this.
+  # CloudFront caches for ~15min by default. Let's reduce this.
   custom_error_response {
     error_code            = 404
     error_caching_min_ttl = 15
