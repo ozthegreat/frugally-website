@@ -6,6 +6,7 @@ variable "service" {
 variable "aws_account_id" {
   default = {
     develop = "110871068631"
+    production = "785901052357"
   }
 }
 
