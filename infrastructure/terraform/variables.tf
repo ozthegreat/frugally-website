@@ -12,7 +12,7 @@ variable "aws_account_id" {
 
 variable "project" {
   type = string
-  default = "ozthegreat/cloudsiren-website"
+  default = "CloudSiren/cloudsiren-website"
 }
 
 variable "provisioner" {
