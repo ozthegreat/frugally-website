@@ -177,7 +177,7 @@ resource "aws_codepipeline" "codepipeline" {
       configuration = {
         Owner  = split("/", var.project)[0]
         Repo   = split("/", var.project)[1]
-        Branch = local.environment
+        Branch = var.branch[local.environment]
         PollForSourceChanges = "false"
       }
     }
