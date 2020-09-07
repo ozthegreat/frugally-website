@@ -30,7 +30,7 @@ variable "endpoint" {
 variable "branch" {
   default = {
     production = "master"
-    develop = "devlop"
+    develop = "develop"
   }
 }
 
