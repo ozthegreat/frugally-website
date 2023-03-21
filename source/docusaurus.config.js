@@ -76,19 +76,15 @@ const config = {
         },
         items: [
           {
+            label: 'Pricing',
+            to: '/pricing',
+            position: 'right',
+          },
+          {
             type: 'doc',
             docId: 'intro',
             position: 'right',
             label: 'Documentation',
-          },
-          // {
-          //   to: '/pricing',
-          //   label: 'Pricing',
-          //   position: 'right'
-          // },
-          {
-            to: '/blog',
-            label: 'Blog', position: 'right'
           },
           {
             type: 'html',
@@ -119,16 +115,16 @@ const config = {
                 to: '/pricing',
               },
               {
+                label: 'FAQs',
+                to: '/faqs',
+              },
+              {
                 label: 'Blog',
                 to: '/blog',
               },
               {
-                label: 'Documentation',
-                to: '/docs/intro',
-              },
-              {
-                label: 'FAQs',
-                to: '/faqs',
+                label: 'About',
+                to: '/about',
               },
               {
                 label: 'Roadmap',
@@ -143,6 +139,10 @@ const config = {
           {
             // title: 'More',
             items: [
+              {
+                label: 'Documentation',
+                to: '/docs/intro',
+              },
               {
                 to: '/terms',
                 label: 'Terms & Conditions',
