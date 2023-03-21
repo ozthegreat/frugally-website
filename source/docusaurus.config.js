@@ -81,11 +81,11 @@ const config = {
             position: 'right',
             label: 'Documentation',
           },
-          {
-            to: '/pricing',
-            label: 'Pricing',
-            position: 'right'
-          },
+          // {
+          //   to: '/pricing',
+          //   label: 'Pricing',
+          //   position: 'right'
+          // },
           {
             to: '/blog',
             label: 'Blog', position: 'right'
