@@ -101,41 +101,67 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                html: `
+                    <a href="https://frugally.app" aria-label="frugally.app">
+                      <img src="img/logo.svg" alt="frugally.app" width="114" height="51" />
+                    </a>
+                  `,
               },
             ],
           },
           {
-            title: 'Community',
+            // title: 'Docs',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Pricing',
+                to: '/pricing',
               },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
               {
                 label: 'Blog',
                 to: '/blog',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Documentation',
+                to: '/docs/intro',
+              },
+              {
+                label: 'FAQs',
+                to: '/faqs',
+              },
+              {
+                label: 'Roadmap',
+                to: '/roadmap',
+              },
+              {
+                label: 'Security & OAuth',
+                to: '/security',
+              },
+            ],
+          },
+          {
+            // title: 'More',
+            items: [
+              {
+                to: '/terms',
+                label: 'Terms & Conditions',
+              },
+              {
+                to: '/privacy',
+                label: 'Privacy Policy',
+              },
+              {
+                to: '/cookie-policy',
+                label: 'Cookie Policy',
+              },
+            ],
+          },
+          {
+            items: [
+              {
+                label: 'support@frugally.app',
+                href: 'mailto:support@frugally.app',
               },
             ],
           },
