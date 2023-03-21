@@ -111,28 +111,24 @@ const config = {
             // title: 'Docs',
             items: [
               {
-                label: 'Pricing',
-                to: '/pricing',
-              },
-              {
                 label: 'FAQs',
                 to: '/faqs',
-              },
-              {
-                label: 'Blog',
-                to: '/blog',
               },
               {
                 label: 'About',
                 to: '/about',
               },
               {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
                 label: 'Roadmap',
                 to: '/roadmap',
               },
               {
-                label: 'Security & OAuth',
-                to: '/security',
+                label: 'OAuth Permissions',
+                to: '/oauth',
               },
             ],
           },
@@ -145,7 +141,7 @@ const config = {
               },
               {
                 to: '/terms',
-                label: 'Terms & Conditions',
+                label: 'Terms of Use',
               },
               {
                 to: '/privacy',
