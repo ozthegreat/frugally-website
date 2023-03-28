@@ -12,8 +12,11 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="hero__title">Save money on your<br />AWS bill!</h1>
+        {/* <p className="hero__subtitle">Shut down your infrastructure when it's not in use. <br />All controlled straight from Slack.</p> */}
+        <p className="hero__subtitle">Turn off your AWS dev instances when they're not needed. Turn them on again when they are.<br />All controlled straight from Slack.</p>
+        {/* <h1 className="hero__title">{siteConfig.title}</h1>
+        <p className="hero__subtitle">{siteConfig.tagline}</p> */}
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"

@@ -5,7 +5,7 @@
  */
 
 /* You can override the default Infima variables here. */
-:root {
+/* :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -15,6 +15,46 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,900;1,500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800;900&family=Roboto:ital,wght@0,500;0,900;1,500&display=swap');
+
+:root {
+  /* --ifm-font-family-base: 'Roboto', sans-serif; */
+  --ifm-color-primary: #5dd39e;
+  --ifm-color-primary-dark: #45cd90;
+  --ifm-color-primary-darker: #39c989;
+  --ifm-color-primary-darkest: #2da771;
+  --ifm-color-primary-light: #75d9ac;
+  --ifm-color-primary-lighter: #81ddb3;
+  --ifm-color-primary-lightest: #a5e6c9;
+}
+
+.navbar--primary {
+  height: 64px;
+}
+
+.navbar__title {
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 8px;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.hero__title {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.footer__bottom {
+  margin-top: 30px
+}
+
+.footer__copyright {
+  font-size: 0.6rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,4 +67,9 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+
+.navbar {
+  box-shadow: none;
 }
