@@ -4,7 +4,7 @@ title: Pricing
 
 # Pricing
 
-With frugally.app you are billed **per execution per instance**. The amount billed is equal to one on-demand hour for the instance the execution is running against.
+With frugally.app you are billed **per execution per instance**. The amount billed is equal to one on-demand hour for the instance the execution is running against. One execution is when frugally.app triggers a state change against an instance.
 
 The **maximum amount** frugally.app will ever charge **per instance** is for 120 executions per month, regardless of how many executions are actually carried out against that instance.
 
