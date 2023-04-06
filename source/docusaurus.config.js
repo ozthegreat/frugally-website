@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'frugally.app',
   tagline: 'Be Cloud Frugal',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/frugally-favicon.ico',
 
   // Set the production url of your site here
   url: 'https://frugally.app',
@@ -70,10 +70,10 @@ const config = {
       // image: 'img/docusaurus-social-card.jpg',
       navbar: {
         style: 'primary',
-        title: 'frugally.app',
+        // title: 'frugally.app',
         logo: {
           alt: 'frugallyy.app Logo',
-          src: 'img/logo.png',
+          src: 'img/frugally-app-white.svg',
         },
         items: [
           {
