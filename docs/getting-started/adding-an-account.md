@@ -8,7 +8,7 @@ The first step is tell frugally.app about your AWS Accounts you'd like it to hav
 
 You can open the **Accounts Screen** either:
 
-a. **From the app homepage**: From within your Slack app, navigate to the Frugally app home screen. This is usually at the bottom of your conversations list in the side bar. Just click the **Frugally** app.
+a. **From the app homepage**: From within your Slack app, navigate to the Frugally app home screen. This is usually at the bottom of your conversations list in the side bar. Just click the **Frugally** app, then at the top of the screen click **Accounts**.
 
 b. **From the shortcuts menu**: From within your Slack app, navigate to any conversation and click the little plus (+) icon next to left of the input text box. Select the **Browse all shortcuts** menu option. Select **Frugally**. Select **Accounts**.
 
@@ -38,7 +38,7 @@ When you've completed the form, click **Save**.
 
 
 ![Accounts Screen Populated](/img/accounts-screen-populated.png)
-_Accounts Screen With Account Added_
+_Accounts Screen with an Account Added_
 
 
 Congratulations, you added your first Account. Now on to the next step [Adding a Resource](adding-a-resource.md).

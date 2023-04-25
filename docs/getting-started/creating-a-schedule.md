@@ -2,4 +2,4 @@
 sidebar_position: 6
 ---
 
-# 6 Creating a Schedule
+# 06 - Creating a Schedule
