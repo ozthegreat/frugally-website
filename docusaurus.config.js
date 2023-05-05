@@ -101,8 +101,8 @@ const config = {
             items: [
               {
                 html: `
-                    <a href="https://frugally.app" aria-label="frugally.app">Frugally.app
-                      <!--<img src="img/logo.svg" alt="frugally.app" width="114" height="51" />-->
+                    <a href="https://frugally.app" aria-label="frugally.app">
+                    <img src="/img/frugally-app-white.svg" alt="frugally.app" width="175" />
                     </a>
                   `,
               },
@@ -113,7 +113,7 @@ const config = {
             items: [
               {
                 label: 'FAQs',
-                to: '/faqs',
+                to: '/docs/category/faqs',
               },
               {
                 label: 'About',

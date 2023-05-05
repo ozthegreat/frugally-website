@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # 03 - Adding a Resource
 
+A Resource is a collection of instances in your AWS Account representing a service. For example you might have an Authentication API that's a collection of EC2s. You can carve up Resources in anyway you wish, whatever is most convenient for you when deciding what needs turning off and on.
+
 You can open the **Resources Screen** either:
 
 a. **From the app homepage**: From within your Slack app, navigate to the Frugally app home screen. This is usually at the bottom of your conversations list in the side bar. Just click the **Frugally** app, then at the top of the screen click **Resources**.
