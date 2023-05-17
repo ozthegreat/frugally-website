@@ -7,7 +7,7 @@ title: Roadmap
 Below is a _rough_ and non-exhaustive roadmap of the features we have coming up. We're always working on security, performance, and bug fixes behind the scenes, this is more big ticket items.
 
 #### Guided Setup
-we want to make it easier for new users with a guided setup the first time they install the app.
+We want to make it easier for new users with a guided setup the first time they install the app.
 
 #### Connection Tester
 When setting up an AWS account, add in a tester that'll allow users to verify the role can be assumed.
