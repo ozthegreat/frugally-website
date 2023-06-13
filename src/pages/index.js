@@ -29,6 +29,30 @@ function HomepageHeader() {
   );
 }
 
+function GridBlock() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <section className={styles.features}>
+      <div className="container">
+        <div className="row">
+          <div className={clsx('col')}>
+            <div className="text--center padding-horiz--md">
+              <h3>Yay a title</h3>
+              <p>Yay a description</p>
+            </div>
+          </div>
+          <div className={clsx('col')}>
+            <div className="text--center padding-horiz--md">
+              <h3></h3>
+              <p>Image</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -38,6 +62,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <GridBlock />
       </main>
     </Layout>
   );
