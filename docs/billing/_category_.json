@@ -1,8 +1,8 @@
 {
-  "label": "Getting Started",
+  "label": "Billing",
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "How to get setup with frugally.app"
+    "description": "How Billing works in frugally.app"
   }
 }

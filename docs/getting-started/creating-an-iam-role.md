@@ -33,7 +33,7 @@ Select the **JSON** tab and paste in the below policy.
 }
 ```
 
-This policy allows frugally.app to look up resources by tags as well as Describe, start, and stop EC2 instances. For extra security it is possible to restrict the policy even further should you wish. [IAM Role Permissions](iam-role-permissions).
+This policy allows frugally.app to look up resources by tags as well as Describe, start, and stop EC2 instances. For extra security it is possible to restrict the policy even further should you wish. [IAM Role Permissions](../advanced/iam-role-permissions).
 
 Click **Next: Tags** to add any Tags you wish to the policy, or leave blank.
 
