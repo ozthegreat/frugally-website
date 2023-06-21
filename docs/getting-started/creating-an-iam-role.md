@@ -39,7 +39,7 @@ Click **Next: Tags** to add any Tags you wish to the policy, or leave blank.
 
 ![IAM Policy Review](/img/iam-policy-review.png)
 
-Click **Next: Review**. For the Policy name put in any identify you wish e.g. `FrugallyAccessPolicy`, add an optional description, then click **Create Policy**.
+Click **Next: Review**. For the Policy name, put in any identify you wish e.g. `FrugallyAccessPolicy` and add an optional description, then click **Create Policy**.
 
 If you now do a search in your list of policies you should see the policy you just created.
 
