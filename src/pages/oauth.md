@@ -11,44 +11,44 @@ title: OAuth Permissions
 The following permissions are requested by the frugally app when it is added to a Slack workspace.
 
 #### commands
-Adds the frugally shortcuts to the shortcuts menu and the `/frugally` slash command to your workspace.
+Allows frugally to trigger shortcuts via slash commands and to be added to the shortcuts menu.
 
 #### im:write
-Allows the frugally app to send direct messages to users.
+Allows the frugally app to send results in direct messages to users.
 
 #### chat:write
-Allows messages to be posted in approved channels/groups.
+Allows frugally to post results in approved channels/groups.
 
 #### channels:join
-Allows the frugally app to join public channels.
+Users can request the results of an execution or summary to be published to public channels. This allows frugally to join those channels when requested.
 
 #### app_mentions:read
-Allows the frugally app to read messages in public channels where it has been directly mentioned.
+Allows frugally to read messages in public channels where it has been directly mentioned.
 
 #### team:read
-Get information about the current workspace.
+Allows frugally to view information about the current workspace so it can add them to frugally.app and setup billing.
 
 #### users:read
-View information about authorized users.
+Allows frugally to see information about users that trigger actions as well as the user that installed the app. Used for billing and event logging.
 
 #### channels:read
-View basic information about public channels.
+Allows frugally to view basic info about public channels users might want it to post results in.
 
 #### groups:read
-View basic information about private groups the frugally app has been invited to.
+Allows frugally to view basic info about groups users might want it to post results in.
 
 #### mpim:read
-View basic information about group direct messages the frugally app has been invited to.
+Allows frugally to view basic info about group direct messages users might want it to post results in.
 
 #### im:read
-View basic information about direct messages with the frugally app.
-
-#### workflow.steps:execute
-Allows frugally to create workflows.
+Allows frugally to view basic info about group direct messages users might want it to post results in or join.
 
 ### OAuth User Permissions
 
 The following OAuth User permissions are requested when Users signin to the dashboard at https://app.frugally.app.
 These are need to authenticate the user with Slack, complete the OAuth flow, and create the user in our system.
 
-`openid`, `profile`, `email`
+### identity.basic
+### identity.email
+### openid
+### profile
