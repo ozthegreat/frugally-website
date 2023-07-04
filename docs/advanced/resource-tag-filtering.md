@@ -12,5 +12,22 @@ Name:user-api
 ```
 *This example will only return EC2 instances tagged with both sets of tags*
 
+You can optionally only specify a tag key. It will match every instance with that key regardless of value.
 
-It is currently not possible to locate resources by `key` alone. It is a feature on our roadmap but please do get intouch and let us know if it's something that would be helpful.
+```
+Environment
+```
+*This example will return EC2 instances that have the Environment tag set with any value.*
+
+You can also specify multiple tag values using a `,` to separate them. Multiple tag values work on an `or` basis, meaning it will match every instance that has at least one of the values.
+
+```
+Environment:develop,staging
+```
+*This example will return EC2 instances that have the Environment tag set with a value of either develop or staging.*
+
+```
+Live
+Environment:develop,staging
+```
+*This example will return EC2 instances that have the Live tag set with any value AND the Environment tag set with a value of either develop or staging.*
