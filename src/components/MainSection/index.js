@@ -3,8 +3,8 @@ import styles from './styles.module.css';
 
 const List = [
   {
-    title: 'Section 1',
-    img: 'https://placehold.co/550x350',
+    title: 'Run Ad Off Actions',
+    img: 'img/4.png',
     description: (
       <>
         Once you've worked through the getting started guide and have frugally.app setup and working you might wish to
@@ -14,8 +14,8 @@ const List = [
     ),
   },
   {
-    title: 'Section 2',
-    img: 'https://placehold.co/550x350',
+    title: 'Create Schedules',
+    img: 'img/3.png',
     description: (
       <>
         Once you've worked through the getting started guide and have frugally.app setup and working you might wish to
@@ -25,8 +25,8 @@ const List = [
     ),
   },
   {
-    title: 'Section 3',
-    img: 'https://placehold.co/550x350',
+    title: 'View Upcoming Schedules',
+    img: 'img/5.png',
     description: (
       <>
         Once you've worked through the getting started guide and have frugally.app setup and working you might wish to
@@ -36,8 +36,8 @@ const List = [
     ),
   },
   {
-    title: 'Section 4',
-    img: 'https://placehold.co/550x350',
+    title: 'See the Results in Channels',
+    img: 'img/1.png',
     description: (
       <>
         Once you've worked through the getting started guide and have frugally.app setup and working you might wish to
@@ -47,8 +47,8 @@ const List = [
     ),
   },
   {
-    title: 'Section 5',
-    img: 'https://placehold.co/550x350',
+    title: 'View Monthly Savings',
+    img: 'img/2.png',
     description: (
       <>
         Once you've worked through the getting started guide and have frugally.app setup and working you might wish to
@@ -73,7 +73,7 @@ function Container({ reverse, img, title, description }) {
   return (
     <div className={styles.container} style={{ flexDirection: reverse ? 'row-reverse' : 'row' }}>
       {/* Image */}
-      <img src={img} alt={title} />
+      <img src={img} alt={title} width="550" />
 
       {/* Content */}
       <div>
