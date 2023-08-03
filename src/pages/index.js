@@ -92,7 +92,6 @@ export default function Home() {
       <main>
         <MainSection />
         <CallToAction />
-        <CallToAction />
       </main>
     </Layout>
   );
