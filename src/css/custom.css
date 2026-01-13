@@ -85,3 +85,156 @@
     margin-right: 0;
   }
 }
+
+/* Pricing page */
+.pricing-plans {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 2rem 0 3rem;
+}
+
+.pricing-plan {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pricing-plan__price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+.pricing-plan__tagline {
+  margin-top: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.pricing-plan__note {
+  margin: 0.5rem 0 1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+
+.pricing-plan__label {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.pricing-plan__section ul {
+  margin-top: 0.25rem;
+}
+
+.pricing-plan__cta {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.pricing-plan--pro {
+  border: 2px solid var(--ifm-color-primary);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+.pricing-plan__badge {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-emphasis-0);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pricing-table__wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.pricing-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.pricing-table th,
+.pricing-table td {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 0.75rem;
+  text-align: center;
+  vertical-align: top;
+}
+
+.pricing-table th {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.pricing-table th:first-child,
+.pricing-table td:first-child {
+  text-align: left;
+}
+
+.pricing-table__row-title {
+  font-weight: 700;
+  width: 220px;
+}
+
+.pricing-table__pro {
+  background: rgba(93, 211, 158, 0.12);
+  font-weight: 700;
+}
+
+.pricing-table__badge {
+  display: inline-block;
+  margin-left: 6px;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-emphasis-0);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.pricing-table__cta td {
+  text-align: center;
+}
+
+.pricing-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .pricing-plans {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.75rem;
+  }
+
+  .pricing-plan {
+    min-width: 80%;
+    scroll-snap-align: start;
+  }
+
+  .pricing-plan--pro {
+    order: -1;
+    transform: none;
+  }
+
+  .pricing-table {
+    min-width: 680px;
+  }
+}

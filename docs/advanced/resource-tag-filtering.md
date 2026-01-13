@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 # How do I use Tags to filter the resources?
 
 A Resource in frugally.app represents one or many resources in your AWS Accounts. You can use Tags to tell frugally.app about the Resources in AWS you wish for it to manage.

@@ -1,4 +1,6 @@
-
+---
+hide_table_of_contents: true
+---
 
 # What's the format for setting executions on a schedule?
 

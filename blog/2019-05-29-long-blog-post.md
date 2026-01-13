@@ -1,4 +1,5 @@
 ---
+hide_table_of_contents: true
 slug: long-blog-post
 title: Long Blog Post
 authors: endi
