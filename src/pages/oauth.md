@@ -45,7 +45,7 @@ Allows frugally to view basic info about group direct messages users might want 
 
 ### OAuth User Permissions
 
-The following OAuth User permissions are requested when Users signin to the dashboard at https://app.frugally.app.
+The following OAuth User permissions are requested when Users signin to the dashboard at https://dashboard.frugally.app.
 These are need to authenticate the user with Slack, complete the OAuth flow, and create the user in our system.
 
 ### identity.basic

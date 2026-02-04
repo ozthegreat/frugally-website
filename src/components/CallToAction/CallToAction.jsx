@@ -9,7 +9,7 @@ export default function CallToAction() {
         <h3 style={{ fontSize: '36px' }}>Try now</h3>
         <p style={{ maxWidth: 800 }}>Add Frugally.app to Slack and get setup in minutes. Start saving straight away.</p>
         <div className={styles.buttons}>
-          <Link href="https://app.frugally.app/slack/install" style={{ color: 'transparent' }}>
+          <Link href="https://dashboard.frugally.app/slack/install" style={{ color: 'transparent' }}>
             <div
               style={{
                 alignItems: 'center',

@@ -27,7 +27,7 @@ function HomepageHeader() {
         {/* <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p> */}
         <div className={styles.buttons}>
-          <Link href="https://app.frugally.app/slack/install" style={{ color: 'transparent' }}>
+          <Link href="https://dashboard.frugally.app/slack/install" style={{ color: 'transparent' }}>
             <div
               style={{
                 alignItems: 'center',

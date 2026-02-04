@@ -34,7 +34,7 @@ Automate start, stop, and resize schedules across your AWS infrastructure withou
       </ul>
     </div>
     <div className="pricing-plan__cta">
-      <a className="button button--secondary button--outline" href="https://app.frugally.app/slack/install">Get started for free</a>
+      <a className="button button--secondary button--outline" href="https://dashboard.frugally.app/slack/install">Get started for free</a>
     </div>
   </div>
 
@@ -60,7 +60,7 @@ Automate start, stop, and resize schedules across your AWS infrastructure withou
       </ul>
     </div>
     <div className="pricing-plan__cta">
-      <a className="button button--secondary" href="https://app.frugally.app/slack/install">Start Basic</a>
+      <a className="button button--secondary" href="https://dashboard.frugally.app/slack/install">Start Basic</a>
     </div>
   </div>
 
@@ -91,7 +91,7 @@ Automate start, stop, and resize schedules across your AWS infrastructure withou
       </ul>
     </div>
     <div className="pricing-plan__cta">
-      <a className="button button--primary" href="https://app.frugally.app/slack/install">Start Pro</a>
+      <a className="button button--primary" href="https://dashboard.frugally.app/slack/install">Start Pro</a>
     </div>
   </div>
 
@@ -266,13 +266,13 @@ Most teams choose **Pro** for full AWS coverage and predictable cost savings.
       <tr className="pricing-table__cta">
         <td></td>
         <td>
-          <a className="button button--secondary button--sm button--outline" href="https://app.frugally.app/slack/install">Get started</a>
+          <a className="button button--secondary button--sm button--outline" href="https://dashboard.frugally.app/slack/install">Get started</a>
         </td>
         <td>
-          <a className="button button--secondary button--sm" href="https://app.frugally.app/slack/install">Start Basic</a>
+          <a className="button button--secondary button--sm" href="https://dashboard.frugally.app/slack/install">Start Basic</a>
         </td>
         <td className="pricing-table__pro">
-          <a className="button button--primary button--sm" href="https://app.frugally.app/slack/install">Start Pro</a>
+          <a className="button button--primary button--sm" href="https://dashboard.frugally.app/slack/install">Start Pro</a>
         </td>
         <td>
           <a className="button button--secondary button--sm button--outline" href="mailto:support@frugally.app">Contact sales</a>
@@ -348,7 +348,7 @@ Yes. Upgrade or downgrade at any time.
 Connect your AWS account, set your schedules, and start cutting cloud costs in minutes.
 
 <div className="pricing-cta-group">
-  <a className="button button--secondary button--outline" href="https://app.frugally.app/slack/install">Get started for free</a>
-  <a className="button button--primary" href="https://app.frugally.app/slack/install">Start Pro</a>
+  <a className="button button--secondary button--outline" href="https://dashboard.frugally.app/slack/install">Get started for free</a>
+  <a className="button button--primary" href="https://dashboard.frugally.app/slack/install">Start Pro</a>
   <a className="button button--secondary button--outline" href="mailto:support@frugally.app">Contact sales</a>
 </div>
