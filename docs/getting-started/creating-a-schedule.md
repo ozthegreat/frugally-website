@@ -3,41 +3,79 @@ hide_table_of_contents: true
 sidebar_position: 6
 ---
 
-# 06 - Creating a Schedule
+# Creating a Schedule
 
-A lot of the power of frugally.app comes in the form of schedules. Your engineers probably work fairly predictable hours, this means there are large portions of time where your dev, staging, QA etc environments are turned on and costing you money, but aren't actually being used e.g. over night / weekends. With schedules you can turn these environments off when they're not in use and only turn them on when they are needed.
+Schedules automate your Executions. For example, turn off your dev environment at 7 PM every evening and start it again at 8 AM on weekdays — saving money overnight and on weekends without lifting a finger.
 
-You can open the Schedules Screen either:
+[View Schedules](https://dashboard.frugally.app/schedules)
 
-a. From the app homepage: From within your Slack app, navigate to the Frugally app home screen. This is usually at the bottom of your conversations list in the side bar. Just click the Frugally app, then at the top of the screen click Schedules.
+:::note
+If you used the Target Onboarding Wizard and created schedules in the final step, you may already have schedules. This page shows how to create and customise them.
+:::
 
-b. From the shortcuts menu: From within your Slack app, navigate to any conversation and click the little box with a / icon inside of it. Search through the list for Schedules by Frugally and select it.
+## Creating your first schedule
 
-![Schedules overview screen](/img/schedules-screen.png)
-_The schedules overview screen will list any existing schedules you have set and when their next run time is_
+Navigate to **Schedules** > **Create Schedule**, or use the link below.
 
-When you're ready to add a new Schedule, click the "Add Schedule" button in the top right corner.
+[Create a Schedule](https://dashboard.frugally.app/schedules/create)
 
-![Create a Schedule screen](/img/create-a-schedule.png)
+`[SCREENSHOT: schedules-list-empty.png — empty Schedules page]`
 
-**Resource Name** A friendly name for the schedule so you can identify it. E.g. Weekdays UserApi
+## The schedule form
 
-**Accounts** Select all the Accounts you wish to run the schedule in.
+The form has two tabs: **Stop (DOWN)** and **Start (UP)**, each with its own schedule settings.
 
-**Resources** Select all the Resources you wish to change (this will run against every region the Resource has selected in every AWS Account you select).
+- **Name** — A friendly label (e.g. `Dev Environment Weekdays`)
+- **Targets** — Select one or more Targets (multi-select)
+- **Timezone** — The timezone the schedule runs in (respects DST)
+- **Slack Channel** *(optional)* — Where to post results when the schedule runs
+- **Status** — Active or Inactive
 
-**UP action CRON** A CRON expression for when you wish to perform the UP action. Can be left blank if you don't wish to perfom one. You can use a site like [crontab](https://crontab.guru) to help you work out the CRON expression you need.
+## Choosing a schedule type
 
-**DOWN action CRON** A CRON expression for when you wish to perform the DOWN action. Can be left blank if you don't wish to perfom one. You can use a site like [crontab](https://crontab.guru) to help you work out the CRON expression you need.
+The guided schedule builder (default) lets you pick a frequency and set times using form fields — no CRON knowledge needed.
 
-**Timezone** The timezone the schedule will run in. Will respect daylight savings.
+| Type | Use case | Fields |
+|------|----------|--------|
+| **Daily** | Same time every day | Time picker (default: 7 PM stop, 8 AM start) |
+| **Weekly** | Specific days of the week | Day checkboxes (default: Mon–Fri) + time picker |
+| **Monthly** | Specific day of the month or Nth weekday | Day selector or "2nd Tuesday" style picker + time picker |
+| **Hourly** | Repeating every N hours | Interval (1–12 hrs) + minute offset + optional day selection |
+| **One-time** | Run once at a specific date/time | Date picker + time picker |
 
-**Channel to post results in** Everytime the schedule runs frugally.app will post the results in a Slack channel. If you wish them to be private then just send them to yourself.
+`[SCREENSHOT: create-schedule-guided.png — guided schedule form showing the Weekly type with day checkboxes and time picker]`
 
-**Status** Whether this schedule is active in frugally.app or not.
+:::tip
+The most common setup is **Weekly, Mon–Fri**: stop at 7 PM and start at 8 AM. This keeps non-production resources off overnight and on weekends.
+:::
 
-When you've completed the form, click **Save**.
+## Advanced: Custom CRON
 
-Everytime the schedule runs the results will be posed in the channel you selected. Frugally.app will update the message further as it gets more information. These can also be viewed on the Homepage tab of the frugally.app.
+For schedules that don't fit the guided types, switch to advanced mode and enter a raw CRON expression (`minute hour day-of-month month day-of-week`).
 
-Congratulations! You've just added your first schedule. You can now save money in AWS by turning your instances off with frugally.app.
+`[SCREENSHOT: create-schedule-cron.png — advanced CRON mode showing the expression input]`
+
+Use [crontab.guru](https://crontab.guru) to build and validate your expression. For more details see the [CRON format guide](../advanced/whats-the-format-for-setting-executions-on-a-schedule.md).
+
+:::tip
+It's safe to set a stop schedule every evening as a safety net, even if resources are already off. frugally.app reports them as already in the desired state and takes no action.
+:::
+
+## Viewing and managing schedules
+
+After saving, your schedule appears in the list with a human-readable summary and next run times.
+
+`[SCREENSHOT: schedules-list-populated.png — schedule list with readable summaries and next run times]`
+
+From this page you can edit, pause (set to Inactive), or delete a schedule. Results appear on the [Executions page](https://dashboard.frugally.app/executions) and in Slack (if connected).
+
+## What's next?
+
+Congratulations — you've completed the Getting Started guide! Here are some next steps to explore:
+
+- [Cost Explorer](https://dashboard.frugally.app/cost-explorer) — Analyse AWS spending
+- [Commitment Utilisation](https://dashboard.frugally.app/commitment-utilisation) — Track RI/SP usage
+- [Cost Guard](https://dashboard.frugally.app/cost-guard) — Budget thresholds and alerts
+- [Insights](https://dashboard.frugally.app/insights) — Execution analytics and savings
+- [Advanced IAM Policy](../advanced/iam-role-permissions.md) — Tag-based restrictions
+- [Resource Tag Filtering](../advanced/resource-tag-filtering.md) — Full tag syntax reference

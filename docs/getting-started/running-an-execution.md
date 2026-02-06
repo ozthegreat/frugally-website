@@ -3,33 +3,52 @@ hide_table_of_contents: true
 sidebar_position: 5
 ---
 
-# 05 - Running an Execution
+# Running an Execution
 
-Now you've told frugally/app about your AWS Accounts and the Resources you wish it to manage, as well as created a Role for it to use, you can test it all by running a one off Execution.
+An Execution is a manual, one-time action against one or more Targets. Use it to test your setup or handle ad-hoc needs like starting a dev environment for weekend work.
 
-_One off Executions are also useful for whenever you need to change the state of one of your Resources outside of a defined Schedule e.g. your Engineers decide to work over the weekend and need to start you development environment._
+[Run Now](https://dashboard.frugally.app/run-now)
 
-You can open the **Executions Screen** either:
+## Running your first execution
 
-a. **From the app homepage**: From within your Slack app, navigate to the Frugally app home screen. This is usually at the bottom of your conversations list in the side bar. Just click the **Frugally** app, then at the top of the screen click **Run an Execution**.
+`[SCREENSHOT: run-now-form.png — Run Now form]`
 
-b. **From the shortcuts menu**: From within your Slack app, navigate to any conversation and click the little plus (+) icon next to left of the input text box. Select the **Browse all shortcuts** menu option. Select **Frugally**. Select **Run an Execution**.
+Fill in the **Run Now** form:
 
-![Run an Execution](/img/run-an-execution.png)
-_Run an Execution_
+- **Targets** — Select one or more Targets (multi-select)
+- **Action** — Depends on the service type:
+  - EC2 / RDS: **Start** or **Stop**
+  - Lambda / VPC Endpoint: **Enable** or **Disable**
+  - ECS: **Scale Up** or **Scale Down**
+  - NAT Gateway: **Create** or **Delete**
+- **Slack channel** *(optional)* — Where to post results
 
-**Accounts** Select all the Accounts you wish to run the Execution in.
+:::note
+If Slack is not connected, the channel field won't appear. Results are always visible on the [Executions page](https://dashboard.frugally.app/executions).
+:::
 
-**Resources** Select all the Resources you wish to change (this will run against every region the Resource has selected in every AWS Account you select).
+Click **Run** to start the execution.
 
-**Action** The action you wish to perfom, either wake up or go to sleep.
+## Viewing execution results
 
-**Channel to post results in** After the Execution frugally.app will post the results in a Slack channel. If you wish them to be private then just send them to yourself.
+Open the [Executions page](https://dashboard.frugally.app/executions) to see status and details for every execution.
 
-When you're ready just select **Run**. If you switch to your AWS Account you should soon see the instances changing state.
+`[SCREENSHOT: execution-in-progress.png — Executions page with status indicators]`
 
-![Execution Results](/img/execution-results.png)
+If you selected a Slack channel, results are also posted there:
 
-After the Execution the results will be posed in the channel you selected. Frugally.app will update the message further as it gets more information.
+`[SCREENSHOT: execution-slack-results.png — Slack message with results]`
 
-Congratulations! You've just run your first execution. You can now save money in AWS by turning your instances off with frugally.app. Now how about doing it on a schedule? [Creating a Schedule](creating-a-schedule.md)
+## Troubleshooting
+
+- **No resources found** — Check that your Target's tags, regions, and service type match actual AWS resources.
+- **Access denied** — Verify the IAM role name and External ID in your Connection match the role in AWS.
+- **Resources not changing state** — Ensure the IAM policy includes the required actions (e.g. `ec2:StartInstances`, `ec2:StopInstances`). See the [Advanced IAM Policy](../advanced/iam-role-permissions.md) guide.
+
+:::tip
+It's safe to run against resources that are already in the desired state. frugally.app reports them as "already in target state" and takes no action.
+:::
+
+---
+
+Next up: [Creating a Schedule](creating-a-schedule.md) — automate your executions on a recurring basis.

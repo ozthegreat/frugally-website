@@ -8,7 +8,7 @@ sidebar_position: 1
 ## Tag restrictions
 For extra security it is possible to use tags in the IAM policy you setup to restrict frugally.app to exactly the resources you want it to control.
 
-Take the IAM policy from the [Getting Started](../getting-started/creating-an-iam-role) section, we can apply a condition to it to restrict the policy to only resources tagged with  `Environment:develop`.
+Take the IAM policy from the [Getting Started](../getting-started/connecting-your-aws-accounts) section, we can apply a condition to it to restrict the policy to only resources tagged with  `Environment:develop`.
 
 ```
 {
