@@ -40,3 +40,5 @@ SCIM provisioning is available on the **Enterprise** plan.
 :::
 
 Enterprise customers using an identity provider that supports SCIM (such as Okta, Microsoft Entra ID, or OneLogin) can automatically provision and deprovision Groups and their memberships. When a group is created, updated, or deleted in your identity provider, the change is reflected in frugally.app without any manual steps.
+
+See [SCIM Provisioning](./sso/scim-provisioning.md) for setup instructions.

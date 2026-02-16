@@ -15,6 +15,8 @@ For a deep dive on connecting AWS accounts, see the [Connections](./category/con
 
 Once you're set up, explore the [Advanced guide](./category/advanced) for topics like IAM policy restrictions and tag filtering.
 
+Enterprise customers can configure [Single Sign-On & Provisioning](./category/single-sign-on--provisioning) to manage authentication and user lifecycle through their identity provider.
+
 Everything to do with [billing and invoicing](./category/billing) can be found there.
 
 For everything else, check out our [FAQs](./category/faqs).
