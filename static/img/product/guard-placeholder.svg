@@ -1,0 +1,7 @@
+<svg width="600" height="450" viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="450" rx="12" fill="#F9FAFB"/>
+  <rect x="1" y="1" width="598" height="448" rx="11" stroke="#5b8def" stroke-width="2" stroke-dasharray="8 4" opacity="0.3"/>
+  <path d="M300 180s40-20 40-50V100l-40-15-40 15v30c0 30 40 50 40 50z" stroke="#5b8def" stroke-width="3" fill="none" opacity="0.5"/>
+  <text x="300" y="260" text-anchor="middle" font-family="system-ui" font-size="16" fill="#9CA3AF" font-weight="600">Guard Dashboard</text>
+  <text x="300" y="285" text-anchor="middle" font-family="system-ui" font-size="13" fill="#D1D5DB">Screenshot coming soon</text>
+</svg>
