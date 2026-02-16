@@ -36,17 +36,20 @@
 .navbar--primary {
   height: 64px;
   position: relative;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* Ensure navbar items container allows mega-menu absolute positioning */
 .navbar__inner {
   max-width: var(--ifm-container-width);
   margin: 0 auto;
+  align-items: center;
 }
 
 .navbar__title {
   font-family: 'Nunito Sans', sans-serif;
-  margin-top: 8px;
   font-size: 1.6rem;
   font-weight: 900;
 }
@@ -90,6 +93,12 @@
   }
   .navbar__logo {
     margin-right: 0;
+  }
+
+  /* Larger tap targets for mobile sidebar menu items */
+  .navbar-sidebar .menu__link {
+    font-size: 1.1rem;
+    padding: 12px 16px;
   }
 }
 

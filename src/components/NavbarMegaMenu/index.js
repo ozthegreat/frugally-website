@@ -85,6 +85,16 @@ export default function MegaMenu({ label }) {
       </button>
 
       <div className={`${styles.megaMenuPanel} ${isOpen ? styles.megaMenuPanelOpen : ''}`} role="menu">
+        <button
+          className={styles.megaMenuBack}
+          onClick={() => setIsOpen(false)}
+          type="button"
+        >
+          <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
+            <path d="M5 1L1 5L5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Back
+        </button>
         <div className={styles.megaMenuColumns}>
           {productMenuData.columns.map((column) => (
             <MenuColumn key={column.id} {...column} />
