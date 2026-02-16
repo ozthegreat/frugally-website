@@ -1,0 +1,8 @@
+{
+  "label": "Single Sign-On & Provisioning",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Configure SAML 2.0 SSO and SCIM provisioning for your Enterprise team."
+  }
+}
