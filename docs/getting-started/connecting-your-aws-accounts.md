@@ -7,120 +7,48 @@ sidebar_position: 2
 
 A **Connection** links frugally.app to one of your AWS accounts via an IAM role. Once connected, frugally.app can discover resources, run executions, and pull cost data.
 
-There are two ways to create Connections: the **AWS Organization Setup Wizard** (recommended for multi-account setups) or adding a **Standalone Connection** for a single account.
+There are two setup paths:
+
+| Path | Best for | Guide |
+|------|----------|-------|
+| **Organisation Setup Wizard** | Multiple accounts under one AWS Organisation | [Organisation setup →](../connections/organisation-setup.md) |
+| **Standalone Connection** | A single AWS account or a quick evaluation | [Standalone setup →](../connections/standalone-setup.md) |
 
 ---
 
-## Option A: AWS Organization Setup Wizard (Recommended)
+## Quick start — Standalone Connection
 
-The wizard connects your AWS Organization management account, discovers member accounts, and generates the IAM policies you need — all in one guided flow.
+If you have a single account and want the fastest path:
 
-[Open the AWS Organization Setup Wizard](https://dashboard.frugally.app/aws-organization-setup)
+1. Create an IAM role in your AWS account — trusted account: `829513654501`, with an External ID from frugally.app.
+2. Attach a policy granting the permissions frugally.app needs.
+3. Fill in the [Add Connection form](https://dashboard.frugally.app/connections/create) with your Account ID, role name, and External ID.
+4. Click **Save** — frugally.app verifies the connection automatically.
 
-### Step 1 — Connect
-
-Enter your **Management Account ID** and **IAM Role Name** (default: `FrugallyOrganizationRole`). Note the **External ID** displayed — you will need it when creating the IAM role in AWS. Toggle optional features such as CloudTrail, Cost Explorer, and CUR access.
-
-Copy the trust policy shown on screen and create the IAM role in your AWS management account.
-
-`[SCREENSHOT: org-wizard-connect.png — wizard Connect step showing account ID, role name, external ID, feature toggles]`
-
-:::note What is the External ID?
-The External ID is a unique identifier that prevents confused-deputy attacks. It ensures only frugally.app can assume the IAM role you create. Never share it publicly.
-:::
-
-### Step 2 — Discover
-
-Once the management account role is verified, the wizard lists all member accounts from AWS Organizations. Select the accounts you want to onboard.
-
-`[SCREENSHOT: org-wizard-discover.png — member account list with checkboxes]`
-
-### Step 3 — Configure
-
-Choose a **delegated billing account** (if applicable) and configure per-account **CloudTrail** access.
-
-`[SCREENSHOT: org-wizard-configure.png — delegated billing & CloudTrail options]`
-
-### Step 4 — Policies
-
-The wizard auto-generates IAM policies based on your selections. Copy the policy JSON and create the IAM role in each selected AWS account.
-
-`[SCREENSHOT: org-wizard-policies.png — generated IAM policy JSON with copy button]`
-
-:::caution
-Create the IAM role in **every** selected member account using the **exact role name** and **External ID** shown in the wizard. Mismatched values will cause connection verification to fail.
-:::
-
-For a full breakdown of each policy action, see the [Advanced IAM Policy](../advanced/iam-role-permissions.md) guide.
-
-### Step 5 — Confirm
-
-Review the summary of all Connections that will be created. Confirm that the IAM roles are in place, then click **Confirm**.
-
-`[SCREENSHOT: org-wizard-confirm.png — summary of all connections to be created]`
+For the full walkthrough, see [Standalone setup](../connections/standalone-setup.md).
 
 ---
 
-## Option B: Standalone Connection
+## Quick start — Organisation Setup
 
-Use this method to connect a single AWS account without going through the Organization wizard.
+If you manage multiple accounts in an AWS Organisation:
 
-[Open the Add Connection form](https://dashboard.frugally.app/connections/create)
+1. Open the [Organisation Setup Wizard](https://dashboard.frugally.app/aws-organization-setup).
+2. Enter your management account details and create the IAM role.
+3. The wizard discovers member accounts — select which to onboard.
+4. Generate and deploy IAM policies to each member account.
+5. Confirm to create all Connections at once.
 
-### Creating the IAM role in AWS
+For the full walkthrough, see [Organisation setup](../connections/organisation-setup.md).
 
-**Step 1 — Create a Policy**
+---
 
-In the AWS IAM console, create a new policy with the permissions frugally.app needs. A minimal EC2-only example:
+## Learn more
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:DescribeInstances",
-        "ec2:StartInstances",
-        "ec2:StopInstances",
-        "tag:GetResources"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-```
-
-:::tip
-The connection form in the dashboard shows the exact policies needed based on the services you select. Use those instead of the minimal example above.
-:::
-
-For the full policy reference, see the [Advanced IAM Policy](../advanced/iam-role-permissions.md) guide.
-
-**Step 2 — Create a Role**
-
-Create an IAM role with the following trust relationship:
-
-- **Trusted account:** `829513654501`
-- **Require External ID:** Yes — use the External ID shown in the frugally.app connection form
-- Attach the policy you created in Step 1
-
-### Adding the Connection
-
-Fill in the connection form:
-
-- **Connection Name** — A friendly label (e.g. `Production`, `Dev Account`)
-- **Account ID** — Your 12-digit AWS account ID
-- **Role Name** — The IAM role name you created
-- **External ID** — Must match the value in your IAM role trust policy
-- **Environment** — Tag the connection (e.g. `production`, `development`)
-- **Status** — Active or Inactive
-
-`[SCREENSHOT: standalone-connection-form.png — add connection form]`
-
-After saving, frugally.app verifies the connection by assuming the role. A green checkmark confirms success.
-
-`[SCREENSHOT: connections-list.png — connections list with verified connection]`
+- **[Connections overview](../connections/overview.md)** — How connections work, key terminology, and which setup path to choose
+- **[Features](../connections/features.md)** — CloudTrail, Cost Explorer, and CUR
+- **[Account health](../connections/account-health.md)** — Verification statuses and troubleshooting
+- **[IAM policy reference](../connections/iam-policies.md)** — Full policy breakdown with JSON, CloudFormation, and Terraform examples
 
 ---
 

@@ -5,10 +5,14 @@ sidebar_position: 1
 
 # Advanced IAM Policy
 
+:::tip
+For the complete IAM policy reference — including trust policies, execution policies, billing policies, CloudTrail policies, and export formats (JSON, CloudFormation, Terraform) — see the [Connections IAM Policy Reference](../connections/iam-policies.md).
+:::
+
 ## Tag restrictions
 For extra security it is possible to use tags in the IAM policy you setup to restrict frugally.app to exactly the resources you want it to control.
 
-Take the IAM policy from the [Getting Started](../getting-started/connecting-your-aws-accounts) section, we can apply a condition to it to restrict the policy to only resources tagged with  `Environment:develop`.
+Take the IAM policy from the [Connections IAM Policy Reference](../connections/iam-policies.md), we can apply a condition to it to restrict the policy to only resources tagged with  `Environment:develop`.
 
 ```
 {

@@ -11,6 +11,8 @@ Let's discover **frugally.app**.
 
 If you're new here, start with the [Getting Started](./getting-started/start-here.md) guide. It walks you through connecting your AWS accounts, creating Targets from your resources, configuring Slack notifications, and running your first execution.
 
+For a deep dive on connecting AWS accounts, see the [Connections](./category/connections) section — it covers Organisation setup, Standalone setup, features (CloudTrail, Cost Explorer, CUR), account health, and the full IAM policy reference.
+
 Once you're set up, explore the [Advanced guide](./category/advanced) for topics like IAM policy restrictions and tag filtering.
 
 Everything to do with [billing and invoicing](./category/billing) can be found there.
