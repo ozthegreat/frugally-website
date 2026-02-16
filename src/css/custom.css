@@ -35,6 +35,13 @@
 
 .navbar--primary {
   height: 64px;
+  position: relative;
+}
+
+/* Ensure navbar items container allows mega-menu absolute positioning */
+.navbar__inner {
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
 }
 
 .navbar__title {

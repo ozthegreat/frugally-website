@@ -1,0 +1,153 @@
+.showcase {
+  padding: 5rem 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+}
+
+.sectionHeader h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.sectionHeader p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Single domain row */
+.domain {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.domain:last-child {
+  margin-bottom: 0;
+}
+
+.domainReverse {
+  flex-direction: row-reverse;
+}
+
+.domainContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.domainBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.domainTagline {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.75rem;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.domainDescription {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.domainFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.domainFeature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 0.92rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.domainLink {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.domainLink:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Image / placeholder */
+.domainImage {
+  flex: 1;
+  min-width: 0;
+}
+
+.domainImagePlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  aspect-ratio: 4 / 3;
+  border: 2px dashed #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.domainImageIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+
+.domainImageLabel {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 996px) {
+  .domain,
+  .domainReverse {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .domainTagline {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,233 @@
+/* Container */
+.megaMenuContainer {
+  position: static;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Trigger button */
+.megaMenuTrigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  height: 100%;
+  background: none;
+  border: none;
+  font-family: inherit;
+  transition: opacity 0.15s ease;
+}
+
+.megaMenuTrigger:hover {
+  opacity: 0.85;
+}
+
+.megaMenuChevron {
+  transition: transform 0.2s ease;
+}
+
+.megaMenuChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Panel */
+.megaMenuPanel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  z-index: 400;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+
+.megaMenuPanelOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Columns grid */
+.megaMenuColumns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 32px 0;
+}
+
+/* Single column */
+.menuColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuColumnHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.menuColumnIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.menuColumnTitle {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  margin: 0;
+  color: #111827;
+}
+
+.menuColumnSubtitle {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 2px 0 0;
+  line-height: 1.3;
+}
+
+.menuColumnList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menuColumnLink {
+  display: block;
+  padding: 6px 0;
+  color: #374151;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.menuColumnLink:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+.menuColumnLearnMore {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.menuColumnLearnMore:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Footer */
+.megaMenuFooter {
+  max-width: 960px;
+  margin: 24px auto 0;
+  padding: 20px 32px 24px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.megaMenuFooterLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+.megaMenuFooterLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.megaMenuFooterLink {
+  font-size: 0.85rem;
+  color: #374151;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s ease;
+}
+
+.megaMenuFooterLink:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+.megaMenuFooterBadge {
+  display: inline-block;
+  background: #5b8def;
+  color: #fff;
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Mobile */
+@media screen and (max-width: 996px) {
+  .megaMenuTrigger {
+    color: var(--ifm-font-color-base);
+    padding: 8px 16px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .megaMenuPanel {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    box-shadow: none;
+    border-top: 1px solid #e5e7eb;
+    transform: none;
+  }
+
+  .megaMenuPanelOpen {
+    transform: none;
+  }
+
+  .megaMenuColumns {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 24px;
+  }
+
+  .megaMenuFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .megaMenuFooterLinks {
+    gap: 8px 16px;
+  }
+}

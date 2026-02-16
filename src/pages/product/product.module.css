@@ -1,0 +1,228 @@
+/* Product page hero */
+.hero {
+  background: var(--accent, var(--ifm-color-primary));
+  padding: 5rem 0 4rem;
+  text-align: center;
+  color: #fff;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 0 auto 1.25rem;
+  max-width: 640px;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.92;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.heroPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #111827 !important;
+  border-radius: 44px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 50px;
+  padding: 0 28px;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.heroPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  color: #111827 !important;
+  text-decoration: none !important;
+}
+
+.heroSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 44px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 50px;
+  padding: 0 28px;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.heroSecondary:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* Feature sections */
+.featureSection {
+  padding: 4rem 0;
+}
+
+.featureSectionAlt {
+  background: #f9fafb;
+}
+
+.featureTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.featureTitle {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.featureBadge {
+  display: inline-block;
+  background: #5b8def;
+  color: #fff;
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.featureDescription {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.7;
+  max-width: 720px;
+  margin-bottom: 1.5rem;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 8px 32px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 0.92rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* CTA section */
+.ctaSection {
+  padding: 4rem 2rem;
+}
+
+.ctaInner {
+  background: #303846;
+  border-radius: 16px;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ctaInner h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.ctaInner p {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ifm-color-primary);
+  color: #fff !important;
+  border-radius: 44px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 50px;
+  padding: 0 32px;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(93, 211, 158, 0.3);
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 996px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .featureList {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaSection {
+    padding: 3rem 1rem;
+  }
+
+  .ctaInner {
+    padding: 2rem 1.5rem;
+  }
+}
