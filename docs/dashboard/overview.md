@@ -32,7 +32,7 @@ The Dashboard is the default landing page after signing in. You can return to it
 
 Each widget links to its detailed section:
 
-- Click the savings summary to explore cost data in [Intelligence](/docs/category/intelligence)
+- Click the savings summary to explore cost data in [Intelligence](https://dashboard.frugally.app/cost-explorer)
 - Click an Execution to view its full detail on the [Executions page](https://dashboard.frugally.app/executions)
 - Click an active Schedule to edit it on the [Schedules page](https://dashboard.frugally.app/schedules)
 

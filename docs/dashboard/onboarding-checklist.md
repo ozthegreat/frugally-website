@@ -18,7 +18,7 @@ Each item is automatically marked as complete when you finish the corresponding 
 | **Run an Execution** | At least one Execution has completed (manual or scheduled) | [Running an Execution](/docs/getting-started/running-an-execution) |
 | **Create a Schedule** | At least one active Schedule exists | [Creating a Schedule](/docs/getting-started/creating-a-schedule) |
 | **Connect Slack** | Slack workspace is connected and a default channel is set | [Connecting Slack](/docs/getting-started/connecting-slack) |
-| **Invite a team member** | At least one invitation has been sent or accepted | [Team Management](/docs/category/team-management) |
+| **Invite a team member** | At least one invitation has been sent or accepted | [Settings](https://dashboard.frugally.app/settings/team) |
 
 `[SCREENSHOT: onboarding-checklist.png -- Dashboard onboarding checklist widget showing partial completion]`
 
