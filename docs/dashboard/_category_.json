@@ -1,0 +1,8 @@
+{
+  "label": "Dashboard",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Your team's home screen — real-time savings overview, onboarding progress, and projected-vs-actual cost comparisons."
+  }
+}

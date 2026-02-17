@@ -1,0 +1,8 @@
+{
+  "label": "Automate",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "The automation engine — define what to stop/start (Targets), when to do it (Schedules), and track every action (Executions)."
+  }
+}

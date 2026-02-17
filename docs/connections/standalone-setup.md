@@ -121,7 +121,7 @@ Back in frugally.app, fill in the connection form:
 | **AWS Account ID** | Your 12-digit AWS account ID. |
 | **Role Name** | The IAM role name you created in Step 2. Default: `FrugallyAccessRole`. |
 | **External ID** | Auto-generated. Must match the External ID in your IAM trust policy. |
-| **Environment** | **Production** or **Non-Production**. Used for access control via [Scopes](../scopes.md). |
+| **Environment** | **Production** or **Non-Production**. Used for access control via [Scopes](../roles-and-access/scopes.md). |
 | **Tier** | *(Non-production only)* Optional sub-label: **Dev**, **Staging**, **Test**, or **Sandbox**. |
 
 ### Optional features

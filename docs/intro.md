@@ -5,20 +5,26 @@ id: docs-intro
 slug: /
 ---
 
-# Intro
+# Welcome to frugally.app
 
-Let's discover **frugally.app**.
+frugally.app is a shift-left FinOps platform that helps teams **automate** cloud cost savings, gain **intelligence** into AWS spending, and **govern** infrastructure changes — all from a single dashboard with Slack and GitHub built in.
 
-If you're new here, start with the [Getting Started](./getting-started/start-here.md) guide. It walks you through connecting your AWS accounts, creating Targets from your resources, configuring Slack notifications, and running your first execution.
+## What you can do with frugally.app
 
-For a deep dive on connecting AWS accounts, see the [Connections](./category/connections) section — it covers Organisation setup, Standalone setup, features (CloudTrail, Cost Explorer, CUR), account health, and the full IAM policy reference.
+| Pillar | What it does |
+|--------|-------------|
+| **Automate** | Define Targets (groups of AWS resources), attach Schedules, and let frugally.app stop, start, and scale resources automatically. |
+| **Intelligence** | Explore AWS costs, track Reserved Instance and Savings Plan utilisation, and detect spending anomalies. |
+| **Guard** | Create projects for infrastructure changes with approval workflows, set budgets, attribute costs to teams, and run compliance scans. |
 
-Once you're set up, explore the [Advanced guide](./category/advanced) for topics like IAM policy restrictions and tag filtering.
+## Quick links
 
-Enterprise customers can configure [Single Sign-On & Provisioning](./category/single-sign-on--provisioning) to manage authentication and user lifecycle through their identity provider.
+- **New here?** Start with the [Getting Started](./getting-started/start-here.md) guide to connect your AWS accounts and run your first Execution.
+- **Connecting integrations?** Set up [Slack](./getting-started/connecting-slack.md) for notifications and quick actions, or [GitHub](./getting-started/connecting-github.md) for IaC scanning and drift detection.
+- **Managing access?** See [Roles & Access](./category/roles--access) for Groups, Scopes, and permissions.
+- **Enterprise SSO?** Configure [SAML SSO & SCIM Provisioning](./category/single-sign-on--provisioning).
+- **Billing questions?** Visit the [Billing](./category/billing) section for plans, credits, and invoices.
+- **Stuck?** Browse the [FAQs](./category/faqs).
+- **Looking up a term?** See the [Glossary](./glossary.md).
 
-Everything to do with [billing and invoicing](./category/billing) can be found there.
-
-For everything else, check out our [FAQs](./category/faqs).
-
-And don't forget, you can always [contact us](mailto:support@frugally.app) if you can't find what you're after.
+Need something else? [Contact us](mailto:support@frugally.app) — we're always happy to help.

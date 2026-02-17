@@ -62,6 +62,53 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // Groups & Scopes → Roles & Access
+          {
+            from: '/docs/groups',
+            to: '/docs/roles-and-access/groups',
+          },
+          {
+            from: '/docs/scopes',
+            to: '/docs/roles-and-access/scopes',
+          },
+          // Connections section → existing pages
+          {
+            from: '/docs/connections/overview',
+            to: '/docs/getting-started/connecting-your-aws-accounts',
+          },
+          {
+            from: '/docs/connections/organisation-setup',
+            to: '/docs/getting-started/connecting-your-aws-accounts',
+          },
+          {
+            from: '/docs/connections/standalone-setup',
+            to: '/docs/getting-started/connecting-your-aws-accounts',
+          },
+          {
+            from: '/docs/connections/iam-policies',
+            to: '/docs/advanced/iam-role-permissions',
+          },
+          {
+            from: '/docs/category/connections',
+            to: '/docs/getting-started/connecting-your-aws-accounts',
+          },
+          // TODO (Phase 5): Uncomment when target pages are created
+          // { from: '/docs/billing/what-are-the-payment-terms', to: '/docs/billing/payment-methods-and-invoices' },
+          // { from: '/docs/billing/when-are-invocies-raised', to: '/docs/billing/payment-methods-and-invoices' },
+          // { from: '/docs/billing/how-to-pay-an-invoice', to: '/docs/billing/payment-methods-and-invoices' },
+          // { from: '/docs/advanced/whats-the-format-for-setting-executions-on-a-schedule', to: '/docs/advanced/schedule-format' },
+          // { from: '/docs/connections/features', to: '/docs/automate/overview' },
+          // { from: '/docs/connections/account-health', to: '/docs/troubleshooting/aws-connections' },
+        ],
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

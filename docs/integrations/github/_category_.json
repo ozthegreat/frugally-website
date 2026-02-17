@@ -1,0 +1,8 @@
+{
+  "label": "GitHub",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "IaC scanning, drift detection, PR cost-impact reviews, and authorship tracking."
+  }
+}

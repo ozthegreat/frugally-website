@@ -1,0 +1,8 @@
+{
+  "label": "Schedules",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Time-based triggers for your Targets — CRON expressions, named schedules, and estimated savings."
+  }
+}

@@ -112,7 +112,7 @@ After a Connection is created, frugally.app **verifies** it by assuming the IAM 
 | **Trust Policy** | The IAM policy that controls who can assume the role. It specifies the frugally.app AWS account and the External ID. |
 | **Execution Policy** | The IAM policy that defines what actions frugally.app can perform once it assumes the role. |
 | **Scope** | Whether a Connection is **Standalone** (independent) or a **Member** (belongs to an Organisation). |
-| **Environment** | A label you assign to a Connection: **Production** or **Non-Production**. Used for access control via [Scopes](../scopes.md). |
+| **Environment** | A label you assign to a Connection: **Production** or **Non-Production**. Used for access control via [Scopes](../roles-and-access/scopes.md). |
 | **Tier** | An optional sub-label for non-production environments: **Dev**, **Staging**, **Test**, or **Sandbox**. |
 
 ---

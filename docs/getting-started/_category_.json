@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Set up frugally.app to automate your cloud costs: connect AWS accounts, create Targets, configure Slack, and start scheduling."
+    "description": "Set up frugally.app to automate your cloud costs: connect AWS accounts, create Targets, configure Slack and GitHub, and start scheduling."
   }
 }

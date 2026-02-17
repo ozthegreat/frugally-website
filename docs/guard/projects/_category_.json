@@ -1,0 +1,8 @@
+{
+  "label": "Projects",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Infrastructure change proposals with versioned approval workflows."
+  }
+}

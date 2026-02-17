@@ -1,0 +1,8 @@
+{
+  "label": "Intelligence",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "AWS billing analysis — explore costs, track commitment utilisation, and detect spending anomalies."
+  }
+}

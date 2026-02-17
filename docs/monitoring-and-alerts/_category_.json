@@ -1,0 +1,8 @@
+{
+  "label": "Monitoring & Alerts",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "Signals, baselines, anomaly detection, and alert management for proactive cloud monitoring."
+  }
+}

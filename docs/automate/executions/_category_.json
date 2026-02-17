@@ -1,0 +1,8 @@
+{
+  "label": "Executions",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Track every action — manual runs, scheduled runs, lifecycle stages, and confidence scoring."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Slack",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Slash commands, AI-powered mentions, Home Tab, reactions, and workflow integrations."
+  }
+}

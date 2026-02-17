@@ -29,7 +29,7 @@ SCIM (System for Cross-domain Identity Management) automates user and group prov
 
 - **User provisioning** --- Create frugally.app accounts when users are assigned in your IdP
 - **User deprovisioning** --- Deactivate access when users are unassigned or removed
-- **Group sync** --- Create and manage [Groups](../groups.md) from your IdP's group assignments
+- **Group sync** --- Create and manage [Groups](../roles-and-access/groups.md) from your IdP's group assignments
 - **Profile updates** --- Keep names and email addresses in sync
 
 ## How SSO and SCIM work together

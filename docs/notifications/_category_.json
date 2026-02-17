@@ -1,0 +1,8 @@
+{
+  "label": "Notifications",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "Configure how your team receives alerts — notification types, team-level policies, and individual preferences."
+  }
+}

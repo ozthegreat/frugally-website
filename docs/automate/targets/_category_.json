@@ -1,0 +1,8 @@
+{
+  "label": "Targets",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Define which AWS resources to act on — supported services, tag filtering, and dry runs."
+  }
+}

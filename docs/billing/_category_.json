@@ -1,8 +1,8 @@
 {
   "label": "Billing",
-  "position": 7,
+  "position": 12,
   "link": {
     "type": "generated-index",
-    "description": "How Billing works in frugally.app"
+    "description": "Plans, credits, usage, invoices, and payment management."
   }
 }

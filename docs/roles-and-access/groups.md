@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Groups
@@ -33,6 +33,8 @@ This is useful when your Slack user groups already reflect your team structure a
 
 Scopes can be assigned to Groups to control what Connections, Targets, and Schedules the Group's members can access. This lets you restrict visibility so that, for example, a development team only sees their own Connections and Targets while a platform team has access to everything.
 
+See [Scopes](scopes.md) for full details.
+
 ## SCIM provisioning (Enterprise)
 
 :::note Enterprise feature
@@ -41,4 +43,4 @@ SCIM provisioning is available on the **Enterprise** plan.
 
 Enterprise customers using an identity provider that supports SCIM (such as Okta, Microsoft Entra ID, or OneLogin) can automatically provision and deprovision Groups and their memberships. When a group is created, updated, or deleted in your identity provider, the change is reflected in frugally.app without any manual steps.
 
-See [SCIM Provisioning](./sso/scim-provisioning.md) for setup instructions.
+See [SCIM Provisioning](../sso/scim-provisioning.md) for setup instructions.

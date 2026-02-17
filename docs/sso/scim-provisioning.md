@@ -88,12 +88,12 @@ When your IdP deprovisions a user:
 
 ### Groups
 
-SCIM groups map to frugally.app [Groups](../groups.md). When your IdP pushes a group:
+SCIM groups map to frugally.app [Groups](../roles-and-access/groups.md). When your IdP pushes a group:
 
 1. A SCIM group record is created in frugally.app
 2. You can **map** the SCIM group to a frugally.app Group from the Provisioning tab
 3. Once mapped, group membership syncs automatically --- members added or removed in your IdP are reflected in the frugally.app Group
-4. You can assign [Scopes](../scopes.md) to the mapped Group to control access
+4. You can assign [Scopes](../roles-and-access/scopes.md) to the mapped Group to control access
 
 To map a SCIM group, click **Create & Map** next to the group name on the Provisioning tab. To disconnect, click **Unmap** --- SCIM-sourced members are removed from the platform Group.
 
@@ -246,5 +246,5 @@ Click **Disable SCIM** on the Provisioning tab. This:
 ## Next steps
 
 - **[Troubleshooting & reference](troubleshooting.md)** for diagnostic logs, error codes, and recovery
-- **[Groups](../groups.md)** for more on managing group access
-- **[Scopes](../scopes.md)** for controlling what Groups can see
+- **[Groups](../roles-and-access/groups.md)** for more on managing group access
+- **[Scopes](../roles-and-access/scopes.md)** for controlling what Groups can see

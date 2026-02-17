@@ -1,0 +1,8 @@
+{
+  "label": "Integrations",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Deep-dive guides for Slack and GitHub integrations beyond initial setup."
+  }
+}
