@@ -1,6 +1,6 @@
 {
   "label": "Connections",
-  "position": 3,
+  "position": 99,
   "link": {
     "type": "generated-index",
     "description": "Connect frugally.app to your AWS accounts. Learn about Organisation and Standalone setups, optional features, IAM policies, and connection health."

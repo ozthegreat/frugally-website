@@ -73,7 +73,11 @@ Screenshots of error messages and the browser console are extremely helpful for 
 | **Slack** | If your team has the Slack integration, use `/frugally help` to open a support thread |
 | **In-app** | Click the help icon in the bottom-right corner of the dashboard |
 
-Support is available Monday to Friday, 9 AM – 6 PM GMT. Enterprise plan customers have access to priority support with faster response times.
+Support is available Monday to Friday, 9 AM – 6 PM GMT.
+
+:::note Enterprise feature
+Enterprise plan customers have access to **priority support** with faster response times.
+:::
 
 ---
 
