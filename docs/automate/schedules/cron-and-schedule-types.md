@@ -77,7 +77,7 @@ frugally.app uses standard 5-field CRON syntax:
 | `0 */2 * * 1-5` | Every 2 hours, Monday to Friday |
 
 :::note
-Use [crontab.guru](https://crontab.guru) to build and validate your CRON expressions. For the complete syntax reference, see [Schedule Format](/docs/advanced/whats-the-format-for-setting-executions-on-a-schedule).
+Use [crontab.guru](https://crontab.guru) to build and validate your CRON expressions. For the complete syntax reference, see [Schedule Format](/docs/advanced/schedule-format).
 :::
 
 ---

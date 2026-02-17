@@ -55,7 +55,7 @@ For schedules that don't fit the guided types, switch to advanced mode and enter
 
 `[SCREENSHOT: create-schedule-cron.png — advanced CRON mode showing the expression input]`
 
-Use [crontab.guru](https://crontab.guru) to build and validate your expression. For more details see the [CRON format guide](../advanced/whats-the-format-for-setting-executions-on-a-schedule.md).
+Use [crontab.guru](https://crontab.guru) to build and validate your expression. For more details see the [Schedule Format Reference](../advanced/schedule-format.md).
 
 :::tip
 It's safe to set a stop schedule every evening as a safety net, even if resources are already off. frugally.app reports them as already in the desired state and takes no action.

@@ -97,13 +97,15 @@ const config = {
             from: '/docs/category/connections',
             to: '/docs/getting-started/connecting-your-aws-accounts',
           },
-          // TODO (Phase 5): Uncomment when target pages are created
-          // { from: '/docs/billing/what-are-the-payment-terms', to: '/docs/billing/payment-methods-and-invoices' },
-          // { from: '/docs/billing/when-are-invocies-raised', to: '/docs/billing/payment-methods-and-invoices' },
-          // { from: '/docs/billing/how-to-pay-an-invoice', to: '/docs/billing/payment-methods-and-invoices' },
-          // { from: '/docs/advanced/whats-the-format-for-setting-executions-on-a-schedule', to: '/docs/advanced/schedule-format' },
-          // { from: '/docs/connections/features', to: '/docs/automate/overview' },
-          // { from: '/docs/connections/account-health', to: '/docs/troubleshooting/aws-connections' },
+          // Billing consolidation redirects
+          { from: '/docs/billing/what-are-the-payment-terms', to: '/docs/billing/payment-methods-and-invoices' },
+          { from: '/docs/billing/when-are-invocies-raised', to: '/docs/billing/payment-methods-and-invoices' },
+          { from: '/docs/billing/how-to-pay-an-invoice', to: '/docs/billing/payment-methods-and-invoices' },
+          // Advanced rename redirect
+          { from: '/docs/advanced/whats-the-format-for-setting-executions-on-a-schedule', to: '/docs/advanced/schedule-format' },
+          // Connections redirects (target pages now exist)
+          { from: '/docs/connections/features', to: '/docs/automate/overview' },
+          { from: '/docs/connections/account-health', to: '/docs/troubleshooting/aws-connections' },
         ],
       },
     ],

@@ -1,5 +1,6 @@
 ---
 hide_table_of_contents: true
+sidebar_position: 2
 ---
 
 # How do I use Tags to filter the resources?

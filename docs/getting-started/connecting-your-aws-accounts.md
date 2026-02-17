@@ -48,7 +48,7 @@ For the full walkthrough, see [Organisation setup](../connections/organisation-s
 - **[Connections overview](../connections/overview.md)** — How connections work, key terminology, and which setup path to choose
 - **[Features](../connections/features.md)** — CloudTrail, Cost Explorer, and CUR
 - **[Account health](../connections/account-health.md)** — Verification statuses and troubleshooting
-- **[IAM policy reference](../connections/iam-policies.md)** — Full policy breakdown with JSON, CloudFormation, and Terraform examples
+- **[IAM policy reference](../advanced/iam-role-permissions.md)** — Full policy breakdown with JSON, CloudFormation, and Terraform examples
 
 ---
 
