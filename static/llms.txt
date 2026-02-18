@@ -1,0 +1,171 @@
+# Frugally
+
+> Frugally is a shift-left FinOps platform for AWS. It helps teams automate cloud cost savings by scheduling start, stop, and scale actions on AWS resources; gain intelligence into AWS spending with cost analysis and anomaly detection; and govern infrastructure changes through approval workflows, budgets, and compliance scans. It integrates natively with Slack and GitHub.
+
+## Documentation
+
+- [Welcome](https://frugally.app/docs): Documentation home — overview of the three pillars (Automate, Intelligence, Guard) and quick links.
+- [Glossary](https://frugally.app/docs/glossary): Definitions of key terms — Connection, Target, Execution, Schedule, Guard Project, Budget, Scope, Group, Credit, Violation, Scan, Finding, Cost Posture, Maturity Assessment, Drift.
+
+### Getting Started
+
+- [Start Here](https://frugally.app/docs/getting-started/start-here): Introduction to frugally.app and onboarding overview.
+- [Connecting Your AWS Accounts](https://frugally.app/docs/getting-started/connecting-your-aws-accounts): How to connect AWS accounts via IAM roles — Organisation and Standalone setup.
+- [Creating Targets](https://frugally.app/docs/getting-started/creating-targets): Scanning and grouping AWS resources by service, region, and tags.
+- [Connecting Slack](https://frugally.app/docs/getting-started/connecting-slack): Setting up Slack notifications, slash commands, and AI queries.
+- [Connecting GitHub](https://frugally.app/docs/getting-started/connecting-github): Enabling IaC scanning and drift detection via the GitHub App.
+- [Running an Execution](https://frugally.app/docs/getting-started/running-an-execution): Testing a manual, one-time action against Targets.
+- [Creating a Schedule](https://frugally.app/docs/getting-started/creating-a-schedule): Automating recurring Executions with time-based triggers.
+
+### Automate
+
+- [Automate Overview](https://frugally.app/docs/automate/overview): The Targets-Schedules-Executions workflow for resource automation.
+- [Onboarding Wizard](https://frugally.app/docs/automate/onboarding-wizard): Guided setup for discovering resources and creating your first automation.
+- [Targets Overview](https://frugally.app/docs/automate/targets/overview): Creating and managing logical groups of AWS resources.
+- [Supported Services](https://frugally.app/docs/automate/targets/supported-services): EC2, RDS, ECS, Lambda, NAT Gateways, VPC Endpoints — actions and credit costs.
+- [Tag Filtering](https://frugally.app/docs/automate/targets/tag-filtering): Filtering resources by AWS tags using include/exclude rules.
+- [Dry Runs](https://frugally.app/docs/automate/targets/dry-runs): Testing Executions without performing real actions.
+- [Schedules Overview](https://frugally.app/docs/automate/schedules/overview): Creating and managing time-based triggers.
+- [CRON & Schedule Types](https://frugally.app/docs/automate/schedules/cron-and-schedule-types): CRON expressions, named patterns, and one-time runs.
+- [Estimated Savings](https://frugally.app/docs/automate/schedules/estimated-savings): How frugally.app calculates projected cost savings.
+- [Executions Overview](https://frugally.app/docs/automate/executions/overview): Understanding Execution results and statuses.
+- [Manual Executions](https://frugally.app/docs/automate/executions/manual-executions): Running ad-hoc actions outside of Schedules.
+- [Execution Lifecycle](https://frugally.app/docs/automate/executions/execution-lifecycle): Statuses and state transitions for Executions.
+- [Confidence Scoring](https://frugally.app/docs/automate/executions/confidence-scoring): Reliability metric for per-resource Execution results.
+- [Insights](https://frugally.app/docs/automate/insights): Analytics on savings and execution performance.
+
+### Intelligence
+
+- [Intelligence Overview](https://frugally.app/docs/intelligence/overview): AWS billing analysis and insights.
+- [Cost Explorer](https://frugally.app/docs/intelligence/cost-explorer): Slice and analyse AWS costs by service, account, region, or tag.
+- [Commitment Utilisation](https://frugally.app/docs/intelligence/commitment-utilisation): Track Reserved Instance and Savings Plan effectiveness.
+- [Cost Anomaly Detection](https://frugally.app/docs/intelligence/cost-anomaly-detection): Detect unexpected spending spikes.
+
+### Guard
+
+- [Guard Overview](https://frugally.app/docs/guard/overview): Infrastructure governance, budgets, and compliance.
+- [Projects Overview](https://frugally.app/docs/guard/projects/overview): Structured proposals for infrastructure changes with approval workflows.
+- [Approval Rules](https://frugally.app/docs/guard/projects/approval-rules): Configuring who can approve Guard Projects.
+- [Project Workflow](https://frugally.app/docs/guard/projects/workflow): Draft, Submitted, Approved/Rejected, Executed lifecycle.
+- [Budgets](https://frugally.app/docs/guard/budgets): Setting spending limits with threshold alerts.
+- [Cost Attribution](https://frugally.app/docs/guard/cost-attribution): Assigning AWS costs to teams, projects, or departments.
+- [Scans & Findings](https://frugally.app/docs/guard/scans-and-findings): Periodic compliance checks and issue detection.
+- [Violations & Remediation](https://frugally.app/docs/guard/violations-and-remediation): Detecting and resolving budget and policy breaches.
+- [Cost Posture](https://frugally.app/docs/guard/cost-posture): Snapshot score of overall cost health.
+- [Maturity Assessment](https://frugally.app/docs/guard/maturity-assessment): Self-assessment of FinOps practice maturity.
+- [Recommendations](https://frugally.app/docs/guard/recommendations): AI-powered suggestions for rightsizing, scheduling, and waste reduction.
+- [Executive Dashboard](https://frugally.app/docs/guard/executive-dashboard): High-level view for leadership and finance.
+- [Resource History & Locks](https://frugally.app/docs/guard/resource-history-and-locks): Change tracking and preventing automation on critical resources.
+
+### Dashboard
+
+- [Dashboard Overview](https://frugally.app/docs/dashboard/overview): Real-time summary of savings, schedules, and executions.
+- [Onboarding Checklist](https://frugally.app/docs/dashboard/onboarding-checklist): Progress tracker for new team setup.
+- [Projected vs Actual Savings](https://frugally.app/docs/dashboard/projected-vs-actual-savings): Comparing expected vs. actual results.
+
+### Integrations — Slack
+
+- [Slack Overview](https://frugally.app/docs/integrations/slack/overview): Notifications, slash commands, AI queries, and the Slack Home Tab.
+- [Slash Commands](https://frugally.app/docs/integrations/slack/slash-commands): Trigger Executions and manage resources from Slack.
+- [App Mentions & AI Intent](https://frugally.app/docs/integrations/slack/app-mentions-and-ai-intent): Natural-language queries about costs and resources.
+- [Home Tab](https://frugally.app/docs/integrations/slack/home-tab): Personalised dashboard inside Slack.
+- [Reactions & Workflows](https://frugally.app/docs/integrations/slack/reactions-and-workflows): Emoji-triggered actions and Slack Workflow Builder integration.
+
+### Integrations — GitHub
+
+- [GitHub Overview](https://frugally.app/docs/integrations/github/overview): IaC scanning, drift detection, PR reviews, and authorship tracking.
+- [Installation](https://frugally.app/docs/integrations/github/installation): GitHub App setup.
+- [IaC Scanning](https://frugally.app/docs/integrations/github/iac-scanning): Terraform, CloudFormation, CDK, Pulumi, OpenTofu cost-impact analysis.
+- [Drift Detection](https://frugally.app/docs/integrations/github/drift-detection): IaC vs. live AWS state comparison.
+- [PR Review & Authorship](https://frugally.app/docs/integrations/github/pr-review-and-authorship): Cost-impact comments and change tracking on pull requests.
+
+### Roles & Access
+
+- [Roles & Access Overview](https://frugally.app/docs/roles-and-access/overview): RBAC model — Users, Roles, Groups, and Scopes.
+- [Roles & Permissions](https://frugally.app/docs/roles-and-access/roles-and-permissions): Permission matrix (Owner, Admin, Member, Viewer).
+- [Groups](https://frugally.app/docs/roles-and-access/groups): Organising team members and assigning Scopes.
+- [Scopes](https://frugally.app/docs/roles-and-access/scopes): Permission boundaries — Environment, Connection, and Target levels.
+- [Access Requests](https://frugally.app/docs/roles-and-access/access-requests): Elevated access workflows.
+
+### SSO & Provisioning
+
+- [SSO Overview](https://frugally.app/docs/sso/overview): SAML SSO and SCIM provisioning (Enterprise).
+- [Setting Up SAML SSO](https://frugally.app/docs/sso/setting-up-saml-sso): IdP configuration guide.
+- [SCIM Provisioning](https://frugally.app/docs/sso/scim-provisioning): Automated user and group lifecycle management.
+- [SSO Troubleshooting](https://frugally.app/docs/sso/troubleshooting): Diagnostic and recovery reference.
+
+### Team Management
+
+- [Team Management Overview](https://frugally.app/docs/team-management/overview): Team settings and administration.
+- [Members & Invitations](https://frugally.app/docs/team-management/members-and-invitations): Inviting, managing, and removing users.
+- [Security Settings](https://frugally.app/docs/team-management/security-settings): Access controls and security configuration.
+- [Feature Flags](https://frugally.app/docs/team-management/feature-flags): Early access to new features.
+
+### Notifications
+
+- [Notifications Overview](https://frugally.app/docs/notifications/overview): Notification system and delivery channels.
+- [User Preferences](https://frugally.app/docs/notifications/user-preferences): Personal notification settings.
+- [Team Policies](https://frugally.app/docs/notifications/team-policies): Group-level notification configuration.
+
+### Advanced
+
+- [IAM Role Permissions](https://frugally.app/docs/advanced/iam-role-permissions): Full IAM policy breakdown with JSON, CloudFormation, and Terraform examples.
+- [Schedule Format](https://frugally.app/docs/advanced/schedule-format): CRON syntax and schedule type reference.
+- [Webhooks](https://frugally.app/docs/advanced/webhooks): API integration via webhook events.
+- [Resource Tag Filtering](https://frugally.app/docs/advanced/resource-tag-filtering): Advanced tag-based filtering rules.
+
+### API Reference
+
+- [API Overview](https://frugally.app/docs/api-reference/overview): API capabilities and authentication.
+- [Webhook Payloads](https://frugally.app/docs/api-reference/webhook-payloads): Event structure documentation.
+- [SCIM API](https://frugally.app/docs/api-reference/scim-api): User provisioning API endpoints.
+- [Guard API v1](https://frugally.app/docs/api-reference/guard-api-v1): Guard-specific API endpoints.
+
+### Billing & Pricing
+
+- [Pricing](https://frugally.app/pricing): Plans (Free, Basic $49/mo, Pro $249/mo, Enterprise custom), credit system, and feature comparison.
+
+### FAQs
+
+- [Credits & Billing](https://frugally.app/docs/faqs/credits-and-billing): How credits work, billing cycles, and invoices.
+- [How to Cancel](https://frugally.app/docs/faqs/how-to-cancel-remove-frugally-app): Removing frugally.app from your workspace.
+- [Data & Security](https://frugally.app/docs/faqs/data-and-security): What data frugally.app accesses and how it is stored.
+- [Supported AWS Resources](https://frugally.app/docs/faqs/what-aws-resources-do-you-support): Full list of supported services and actions.
+- [Roles & Access FAQ](https://frugally.app/docs/faqs/roles-and-access): Common questions about permissions and team setup.
+- [GitHub Integration FAQ](https://frugally.app/docs/faqs/github-integration): Common questions about the GitHub App.
+- [Viewing Usage, Bills & Savings](https://frugally.app/docs/faqs/view-current-historical-usage-bills-savings): Where to find cost and savings data.
+- [Guard & Budgets FAQ](https://frugally.app/docs/faqs/guard-and-budgets): Common questions about governance features.
+- [Accessing the Dashboard](https://frugally.app/docs/faqs/how-to-access-the-dashboard): How to sign in and navigate the dashboard.
+
+### Troubleshooting
+
+- [General Troubleshooting](https://frugally.app/docs/troubleshooting/general): Methodology, status page, and contacting support.
+- [AWS Connections](https://frugally.app/docs/troubleshooting/aws-connections): Connection verification and health check issues.
+- [Executions & Schedules](https://frugally.app/docs/troubleshooting/executions-and-schedules): Execution failures and scheduling issues.
+- [Guard](https://frugally.app/docs/troubleshooting/guard): Guard-specific troubleshooting.
+- [Billing & Credits](https://frugally.app/docs/troubleshooting/billing-and-credits): Payment and credit issues.
+- [Slack Integration](https://frugally.app/docs/troubleshooting/slack-integration): Slack-specific problems and fixes.
+- [GitHub Integration](https://frugally.app/docs/troubleshooting/github-integration): GitHub integration issues.
+
+## Pages
+
+- [Home](https://frugally.app): Product overview — Automate, Intelligence, and Guard pillars.
+- [Pricing](https://frugally.app/pricing): Plans, credit system, and feature comparison.
+- [Automate Product Page](https://frugally.app/product/automate): Automate feature showcase.
+- [Intelligence Product Page](https://frugally.app/product/intelligence): Intelligence feature showcase.
+- [Guard Product Page](https://frugally.app/product/guard): Guard feature showcase.
+- [Platform Page](https://frugally.app/product/platform): Platform overview and integrations.
+- [About](https://frugally.app/about): About frugally.app.
+- [Roadmap](https://frugally.app/roadmap): Product roadmap.
+- [Blog](https://frugally.app/blog): Latest posts and updates.
+
+## Legal
+
+- [Terms of Use](https://frugally.app/terms): Terms of service.
+- [Privacy Policy](https://frugally.app/privacy): Privacy policy.
+- [Cookie Policy](https://frugally.app/cookie-policy): Cookie usage policy.
+- [OAuth Permissions](https://frugally.app/oauth): OAuth permission reference.
+
+## Optional
+
+- [llms-full.txt](https://frugally.app/llms-full.txt): Complete documentation content for LLM ingestion.
